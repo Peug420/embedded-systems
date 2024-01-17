@@ -75,7 +75,10 @@ software::game::pixelType software::game::getPixelType(hardware::pixelCoordinate
 }
 
 void software::game::loseGame() {
-
+  /*
+  ledMatrix_.clearMatrix();
+  ledMatrix_.outputMatrix();
+  */
 }
 
 void software::game::spawnFood(const uint8_t &number) {

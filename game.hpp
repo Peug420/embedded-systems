@@ -7,8 +7,6 @@
 #include "led_matrix.hpp"
 #include "joy_stick.hpp"
 
-//#include <array>
-
 namespace software {
 
 class game {
