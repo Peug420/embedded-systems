@@ -94,7 +94,7 @@ void hardware::led_matrix::setPixel(uint16_t x, uint16_t y, colorPixel color) {
     return;
   if(x >= MATRIX_WIDTH || y >= MATRIX_HEIGHT)
     return;
-  matrix_->writePixel(x, y, matrix_->Color24to16(color));
+  matrix_->writePixel(x, MATRIX_HEIGHT - y - 1, matrix_->Color24to16(color));
 }
 
 void hardware::led_matrix::setPixel(uint16_t x, uint16_t y, uint32_t color) {
@@ -102,7 +102,7 @@ void hardware::led_matrix::setPixel(uint16_t x, uint16_t y, uint32_t color) {
     return;
   if(x >= MATRIX_WIDTH || y >= MATRIX_HEIGHT)
     return;
-  matrix_->writePixel(x, y, matrix_->Color24to16(color));
+  matrix_->writePixel(x, MATRIX_HEIGHT - y - 1, matrix_->Color24to16(color));
 }
 
 void hardware::led_matrix::unsetPixel(uint16_t x, uint16_t y) {
@@ -110,7 +110,7 @@ void hardware::led_matrix::unsetPixel(uint16_t x, uint16_t y) {
     return;
   if(x > MATRIX_WIDTH || y > MATRIX_HEIGHT)
     return;
-  matrix_->writePixel(x, y, 0);
+  matrix_->writePixel(x, MATRIX_HEIGHT - y - 1, 0);
 }
 
 void hardware::led_matrix::printText(const char *text, int16_t x, int16_t y, 
@@ -120,7 +120,7 @@ void hardware::led_matrix::printText(const char *text, int16_t x, int16_t y,
   matrix_->setTextSize(1);
   matrix_->setRotation(0);
   matrix_->setCursor(x, MATRIX_HEIGHT - y - 1);
-  matrix_->setTextColor(color);
+  matrix_->setTextColor(matrix_->Color24to16(color));
   matrix_->print(text);
   matrix_->show();
 }
