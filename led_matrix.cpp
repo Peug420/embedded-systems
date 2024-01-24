@@ -30,12 +30,12 @@ bool hardware::pixelCoordinate::decreaseY() {
 
 
 
-hardware::led_matrix::led_matrix() : test_(0)
+hardware::led_matrix::led_matrix()
 {
   
 }
 
-hardware::led_matrix::led_matrix(led_matrix &t) : test_(t.test_)
+hardware::led_matrix::led_matrix(led_matrix &t) : matrix_(t.matrix_)
 {
   
 }
@@ -81,9 +81,6 @@ void hardware::led_matrix::init() {
   matrix_->setTextWrap(false);
   matrix_->setBrightness(brightness_);
 
-  matrix_->fillScreen(LED_WHITE_LOW);
-  matrix_->show();
-  delay(3000);
   matrix_->clear();
   matrix_->show();
   
@@ -97,15 +94,15 @@ void hardware::led_matrix::setPixel(uint16_t x, uint16_t y, colorPixel color) {
     return;
   if(x >= MATRIX_WIDTH || y >= MATRIX_HEIGHT)
     return;
-  matrix_->writePixel(x, y, color);
+  matrix_->writePixel(x, y, matrix_->Color24to16(color));
 }
 
-void hardware::led_matrix::setPixel(uint16_t x, uint16_t y, uint16_t color) {
+void hardware::led_matrix::setPixel(uint16_t x, uint16_t y, uint32_t color) {
   if(!initailized_)
     return;
   if(x >= MATRIX_WIDTH || y >= MATRIX_HEIGHT)
     return;
-  matrix_->writePixel(x, y, color);
+  matrix_->writePixel(x, y, matrix_->Color24to16(color));
 }
 
 void hardware::led_matrix::unsetPixel(uint16_t x, uint16_t y) {
@@ -120,7 +117,6 @@ void hardware::led_matrix::setBrightness(uint8_t brightn) {
   brightness_ = brightn;
   matrix_->setBrightness(brightness_);
 }
-
 
 void hardware::led_matrix::outputMatrix() {
   if(!initailized_)

@@ -75,6 +75,8 @@ software::game::pixelType software::game::getPixelType(hardware::pixelCoordinate
 }
 
 void software::game::loseGame() {
+
+  
   /*
   ledMatrix_.clearMatrix();
   ledMatrix_.outputMatrix();
