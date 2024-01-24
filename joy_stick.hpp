@@ -2,8 +2,6 @@
 #define __joy_stick_header_included__
 #include <sys/_stdint.h>
 #include <Arduino.h>
-#include "api/Common.h"
-#include "api/Compat.h"
 
 namespace hardware {
 
@@ -40,6 +38,7 @@ class joy_stick {
     void init();
 
     direction getDirection();
+    bool isPressed();
 };
 }
 

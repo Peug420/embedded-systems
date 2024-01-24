@@ -1,6 +1,3 @@
-
-//#include <cstdint>
-#include <sys/_stdint.h>
 #ifndef __led_matrix_header_included__
 #define __led_matrix_header_included__
 
@@ -71,6 +68,8 @@ class led_matrix {
     void setPixel(uint16_t x, uint16_t y, colorPixel color);
     void setPixel(uint16_t x, uint16_t y, uint32_t color);
     void unsetPixel(uint16_t x, uint16_t y);
+    void printText(const char *text, int16_t x, int16_t y, 
+                    CRGB::HTMLColorCode color, bool wrap);
     void setBrightness(uint8_t brightn);
 
     void outputMatrix();

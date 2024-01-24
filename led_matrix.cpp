@@ -74,7 +74,7 @@ void hardware::led_matrix::init() {
   if(initailized_)
     return;
   matrix_ = new FastLED_NeoMatrix(leds_, MATRIX_WIDTH, MATRIX_HEIGHT, 
-                                 NEO_MATRIX_TOP     + NEO_MATRIX_LEFT +
+                                 NEO_MATRIX_BOTTOM     + NEO_MATRIX_LEFT +
                                  NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG);
   FastLED.addLeds<CHIPSET, LED_PIN, COLOR_ORDER>(leds_, NUM_LEDS).setCorrection(TypicalSMD5050);  
   matrix_->begin();
@@ -111,6 +111,18 @@ void hardware::led_matrix::unsetPixel(uint16_t x, uint16_t y) {
   if(x > MATRIX_WIDTH || y > MATRIX_HEIGHT)
     return;
   matrix_->writePixel(x, y, 0);
+}
+
+void hardware::led_matrix::printText(const char *text, int16_t x, int16_t y, 
+                                      CRGB::HTMLColorCode color, bool wrap) {
+  matrix_->clear();
+  matrix_->setTextWrap(wrap);
+  matrix_->setTextSize(1);
+  matrix_->setRotation(0);
+  matrix_->setCursor(x, MATRIX_HEIGHT - y - 1);
+  matrix_->setTextColor(color);
+  matrix_->print(text);
+  matrix_->show();
 }
 
 void hardware::led_matrix::setBrightness(uint8_t brightn) {

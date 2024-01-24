@@ -58,3 +58,7 @@ hardware::joy_stick::direction hardware::joy_stick::getDirection() { //Returns J
   
   return hardware::joy_stick::direction::noDirection;
 }
+
+bool hardware::joy_stick::isPressed() {
+  return digitalRead(buttonPin_);
+}

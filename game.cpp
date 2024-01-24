@@ -1,6 +1,3 @@
-
-#include "pins_arduino.h"
-#include "api/Compat.h"
 #include "game.hpp"
 
 // constructor / destrcutor
@@ -75,12 +72,16 @@ software::game::pixelType software::game::getPixelType(hardware::pixelCoordinate
 }
 
 void software::game::loseGame() {
+  const static int16_t charWidth = 6;
 
-  
-  /*
-  ledMatrix_.clearMatrix();
-  ledMatrix_.outputMatrix();
-  */
+  std::string lost{"You lost! Score: " + 
+                  std::to_string(snake_.getSnakeLength())};
+
+  for(int16_t x=(MATRIX_WIDTH-1); 
+          x>=(static_cast<int16_t>(lost.size())*charWidth * -1); x--) {
+    ledMatrix_.printText(lost.c_str(), x, 10, CRGB::Blue, false);
+    delay(100);
+  }
 }
 
 void software::game::spawnFood(const uint8_t &number) {
@@ -223,4 +224,8 @@ bool software::game::exec() {
   ledMatrix_.outputMatrix();
 
   return true;
+}
+
+bool software::game::menu() {
+  return joyStick_.isPressed();
 }

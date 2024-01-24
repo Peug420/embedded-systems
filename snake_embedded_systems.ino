@@ -4,7 +4,6 @@
         (c) Julius Zeng 04.12.2023
 */      
 
-#include <Arduino.h>
 #include "game.hpp"
 #include "joy_stick.hpp"
 #include "led_matrix.hpp"
@@ -13,6 +12,8 @@ hardware::led_matrix matrix{};
 hardware::joy_stick joyStick{22, 26, 27};
 
 software::game game{matrix, joyStick};
+
+bool gameActive = false;
 
 
 void setup() {
@@ -24,13 +25,19 @@ void setup() {
 
   game.init();
 
+  gameActive = true;
+
   Serial.begin(9600);
   Serial.println("Finished Setup");
 }
 
 void loop(){
-  
-  if(!game.exec())
-    Serial.println("You lose!");
-  delay(300);
+  if(gameActive) {
+    if(!game.exec()) {
+      Serial.println("You lose!");
+      gameActive = false;
+      delay(2000);
+    }
+    delay(300);
+  }
 }

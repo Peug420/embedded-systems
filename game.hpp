@@ -1,8 +1,8 @@
 #ifndef __game_header_included__
 #define __game_header_included__
 
-#include <algorithm>
-#include <Arduino.h>
+#include <string>
+
 #include "snake.hpp"
 #include "led_matrix.hpp"
 #include "joy_stick.hpp"
@@ -51,6 +51,7 @@ class game {
     void init();
 
     bool exec();
+    bool menu();
 };
 }
 

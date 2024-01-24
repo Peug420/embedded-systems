@@ -2,7 +2,6 @@
 #define __snake_header_included__
 
 #include <deque>
-#include <iterator>
 #include <algorithm>
 #include "led_matrix.hpp"
 #include "joy_stick.hpp"
