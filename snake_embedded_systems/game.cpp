@@ -172,7 +172,6 @@ void software::game::init() {
     }
   }
 
-  // initailize snake
   hardware::joy_stick::direction dir;
   switch(random(0, 4)) {
     case 0:
@@ -192,6 +191,7 @@ void software::game::init() {
       break;
   }
 
+  // initialize snake
   snake_.init(hardware::pixelCoordinate{random(MATRIX_WIDTH*0.3, 
                                                MATRIX_WIDTH*0.7), 
                                         random(MATRIX_HEIGHT*0.3,
