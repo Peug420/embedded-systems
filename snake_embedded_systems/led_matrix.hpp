@@ -41,13 +41,6 @@ class led_matrix {
     CRGB leds_[NUM_LEDS];
     FastLED_NeoMatrix *matrix_;
 
-    //##### conversion functions #####
-    //(coordinates)
-    uint Xm(byte m); //returns X value of Output:leds_[m]
-    uint Ym(byte m); //returns Y value of Output:leds_[m]
-
-    byte Mxy(uint8_t x, uint8_t y); //returns leds_[m] value of coordinates (reverse function of Xm/Ym)
-
   public:
     led_matrix();
     led_matrix(led_matrix &t);

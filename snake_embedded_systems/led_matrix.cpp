@@ -44,32 +44,6 @@ hardware::led_matrix::~led_matrix() {
   delete matrix_;
 }
 
-//##### conversion functions #####
-//(coordinates)
-uint hardware::led_matrix::Xm(byte m){ //returns X value of Output:leds_[m]
-  byte row = (m / MATRIX_WIDTH);
-  if(row % 2){  //row is odd
-    return ((((((1+row)*MATRIX_WIDTH)- m)-1)*2)-15);
-  }
-  else{         //row is even
-    return (((m - (row*MATRIX_WIDTH))*2)-15);
-  }
-}
-
-uint hardware::led_matrix::Ym(byte m){ //returns Y value of Output:leds_[m]
-  if(0 <= m <= NUM_LEDS-1){
-    return (((m / MATRIX_WIDTH)*2)-15);
-  }
-}
-
-byte hardware::led_matrix::Mxy(uint8_t x, uint8_t y){ //returns leds_[m] value of coordinates (reverse function of Xm/Ym)
-  bool reverserow = false;
-  if(y % 2){  //row is odd and needs to be reversed
-    x = MATRIX_WIDTH - x -1;
-  }
-  return (y * MATRIX_WIDTH + x);
-}
-
 void hardware::led_matrix::init() {
   if(initailized_)
     return;
