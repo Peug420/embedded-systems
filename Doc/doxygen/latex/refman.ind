@@ -1,0 +1,107 @@
+\begin{theindex}
+
+  \item {decreaseX}
+    \subitem {hardware::pixelCoordinate}, \hyperpage{11}
+  \item {decreaseY}
+    \subitem {hardware::pixelCoordinate}, \hyperpage{11}
+
+  \indexspace
+
+  \item {exec}
+    \subitem {software::game}, \hyperpage{6}
+
+  \indexspace
+
+  \item {game}
+    \subitem {software::game}, \hyperpage{5}
+  \item {getDirection}
+    \subitem {hardware::joy\_stick}, \hyperpage{7}
+    \subitem {software::snake}, \hyperpage{13}
+  \item {getHeadCoord}
+    \subitem {software::snake}, \hyperpage{13}
+  \item {getSnakeLength}
+    \subitem {software::snake}, \hyperpage{13}
+  \item {getTailCoord}
+    \subitem {software::snake}, \hyperpage{14}
+  \item {grow}
+    \subitem {software::snake}, \hyperpage{14}
+
+  \indexspace
+
+  \item {hardware::joy\_stick}, \hyperpage{6}
+    \subitem {getDirection}, \hyperpage{7}
+    \subitem {isPressed}, \hyperpage{7}
+    \subitem {joy\_stick}, \hyperpage{7}
+  \item {hardware::led\_matrix}, \hyperpage{8}
+    \subitem {led\_matrix}, \hyperpage{9}
+    \subitem {printText}, \hyperpage{9}
+    \subitem {setBrightness}, \hyperpage{9}
+    \subitem {setPixel}, \hyperpage{10}
+    \subitem {unsetPixel}, \hyperpage{10}
+  \item {hardware::pixelCoordinate}, \hyperpage{11}
+    \subitem {decreaseX}, \hyperpage{11}
+    \subitem {decreaseY}, \hyperpage{11}
+    \subitem {increaseX}, \hyperpage{12}
+    \subitem {increaseY}, \hyperpage{12}
+
+  \indexspace
+
+  \item {increaseX}
+    \subitem {hardware::pixelCoordinate}, \hyperpage{12}
+  \item {increaseY}
+    \subitem {hardware::pixelCoordinate}, \hyperpage{12}
+  \item {init}
+    \subitem {software::snake}, \hyperpage{14}
+  \item {isPressed}
+    \subitem {hardware::joy\_stick}, \hyperpage{7}
+
+  \indexspace
+
+  \item {joy\_stick}
+    \subitem {hardware::joy\_stick}, \hyperpage{7}
+
+  \indexspace
+
+  \item {led\_matrix}
+    \subitem {hardware::led\_matrix}, \hyperpage{9}
+
+  \indexspace
+
+  \item {menu}
+    \subitem {software::game}, \hyperpage{6}
+  \item {move}
+    \subitem {software::snake}, \hyperpage{14}
+
+  \indexspace
+
+  \item {printText}
+    \subitem {hardware::led\_matrix}, \hyperpage{9}
+
+  \indexspace
+
+  \item {setBrightness}
+    \subitem {hardware::led\_matrix}, \hyperpage{9}
+  \item {setDirection}
+    \subitem {software::snake}, \hyperpage{15}
+  \item {setPixel}
+    \subitem {hardware::led\_matrix}, \hyperpage{10}
+  \item {software::game}, \hyperpage{5}
+    \subitem {exec}, \hyperpage{6}
+    \subitem {game}, \hyperpage{5}
+    \subitem {menu}, \hyperpage{6}
+  \item {software::snake}, \hyperpage{13}
+    \subitem {getDirection}, \hyperpage{13}
+    \subitem {getHeadCoord}, \hyperpage{13}
+    \subitem {getSnakeLength}, \hyperpage{13}
+    \subitem {getTailCoord}, \hyperpage{14}
+    \subitem {grow}, \hyperpage{14}
+    \subitem {init}, \hyperpage{14}
+    \subitem {move}, \hyperpage{14}
+    \subitem {setDirection}, \hyperpage{15}
+
+  \indexspace
+
+  \item {unsetPixel}
+    \subitem {hardware::led\_matrix}, \hyperpage{10}
+
+\end{theindex}

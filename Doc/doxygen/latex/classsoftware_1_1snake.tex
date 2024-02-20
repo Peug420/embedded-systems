@@ -1,0 +1,150 @@
+\doxysection{software\+::snake Class Reference}
+\hypertarget{classsoftware_1_1snake}{}\label{classsoftware_1_1snake}\index{software::snake@{software::snake}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsoftware_1_1snake_af9202daf7c4d1961ae1e9df4ef864954}\label{classsoftware_1_1snake_af9202daf7c4d1961ae1e9df4ef864954} 
+{\bfseries snake} ()
+\begin{DoxyCompactList}\small\item\em Construct a new snake object. \end{DoxyCompactList}\item 
+\Hypertarget{classsoftware_1_1snake_a80ed9084a4f45a15cff651a55e7bf6d9}\label{classsoftware_1_1snake_a80ed9084a4f45a15cff651a55e7bf6d9} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}snake} ()
+\begin{DoxyCompactList}\small\item\em Destroy the snake object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsoftware_1_1snake_a69738ee10fd921447b478e6d9031e3b2}{init}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord, \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction}} dir)
+\begin{DoxyCompactList}\small\item\em Init function for this object. Need to be called shortly after initialisation. The start coordinate and start direction is set by this method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsoftware_1_1snake_ac7709e0205f52adc33be53b4fdcd4594}{move}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord)
+\begin{DoxyCompactList}\small\item\em Move the snake on coordinate. Add the new coordinate and deletes the tail coordiante of the snake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsoftware_1_1snake_a7ef24dcf7f58202c420a010ac14d3a34}{grow}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord)
+\begin{DoxyCompactList}\small\item\em Grows the snake to the coordinate. Add the new coordinate, but does not delete the tail coordinate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} \mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{get\+Head\+Coord}} ()
+\begin{DoxyCompactList}\small\item\em Get the coordinate of the snake head. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} \mbox{\hyperlink{classsoftware_1_1snake_a452b67ad805a0a0f39f5593fdd6b2a12}{get\+Tail\+Coord}} ()
+\begin{DoxyCompactList}\small\item\em Get the coordinate of the snake tail. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction}} \mbox{\hyperlink{classsoftware_1_1snake_a9b2210892507bac965c567f89d3fd218}{get\+Direction}} ()
+\begin{DoxyCompactList}\small\item\em Get the direction of the snake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsoftware_1_1snake_a6d6413e21ae4e81f1d84ae673dfbfd6b}{set\+Direction}} (\mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction}} dir)
+\begin{DoxyCompactList}\small\item\em Set the direction object of the snake. Can not be no direction, must be up, right, lef or down. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classsoftware_1_1snake_a366ac68925ebc637e8a9bca536fbe53f}{get\+Snake\+Length}} ()
+\begin{DoxyCompactList}\small\item\em Get the length of the snake, the number of coordinates in the deque. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsoftware_1_1snake_a9b2210892507bac965c567f89d3fd218}\label{classsoftware_1_1snake_a9b2210892507bac965c567f89d3fd218} 
+\index{software::snake@{software::snake}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction}} software\+::snake\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the direction of the snake. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction} Direction of the snake. 
+\end{DoxyReturn}
+\Hypertarget{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}\label{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd} 
+\index{software::snake@{software::snake}!getHeadCoord@{getHeadCoord}}
+\index{getHeadCoord@{getHeadCoord}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{getHeadCoord()}{getHeadCoord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} software\+::snake\+::get\+Head\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the coordinate of the snake head. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate} Coordinate of the head. 
+\end{DoxyReturn}
+\Hypertarget{classsoftware_1_1snake_a366ac68925ebc637e8a9bca536fbe53f}\label{classsoftware_1_1snake_a366ac68925ebc637e8a9bca536fbe53f} 
+\index{software::snake@{software::snake}!getSnakeLength@{getSnakeLength}}
+\index{getSnakeLength@{getSnakeLength}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{getSnakeLength()}{getSnakeLength()}}
+{\footnotesize\ttfamily uint8\+\_\+t software\+::snake\+::get\+Snake\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the length of the snake, the number of coordinates in the deque. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Length of the snake. 
+\end{DoxyReturn}
+\Hypertarget{classsoftware_1_1snake_a452b67ad805a0a0f39f5593fdd6b2a12}\label{classsoftware_1_1snake_a452b67ad805a0a0f39f5593fdd6b2a12} 
+\index{software::snake@{software::snake}!getTailCoord@{getTailCoord}}
+\index{getTailCoord@{getTailCoord}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{getTailCoord()}{getTailCoord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} software\+::snake\+::get\+Tail\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the coordinate of the snake tail. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate} Coordinate of the tail. 
+\end{DoxyReturn}
+\Hypertarget{classsoftware_1_1snake_a7ef24dcf7f58202c420a010ac14d3a34}\label{classsoftware_1_1snake_a7ef24dcf7f58202c420a010ac14d3a34} 
+\index{software::snake@{software::snake}!grow@{grow}}
+\index{grow@{grow}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{grow()}{grow()}}
+{\footnotesize\ttfamily void software\+::snake\+::grow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord }\end{DoxyParamCaption})}
+
+
+
+Grows the snake to the coordinate. Add the new coordinate, but does not delete the tail coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & New coordinate to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsoftware_1_1snake_a69738ee10fd921447b478e6d9031e3b2}\label{classsoftware_1_1snake_a69738ee10fd921447b478e6d9031e3b2} 
+\index{software::snake@{software::snake}!init@{init}}
+\index{init@{init}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void software\+::snake\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord,  }\item[{\mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Init function for this object. Need to be called shortly after initialisation. The start coordinate and start direction is set by this method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Starting coordinate. \\
+\hline
+{\em dir} & Starting direction. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsoftware_1_1snake_ac7709e0205f52adc33be53b4fdcd4594}\label{classsoftware_1_1snake_ac7709e0205f52adc33be53b4fdcd4594} 
+\index{software::snake@{software::snake}!move@{move}}
+\index{move@{move}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void software\+::snake\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord }\end{DoxyParamCaption})}
+
+
+
+Move the snake on coordinate. Add the new coordinate and deletes the tail coordiante of the snake. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & New coordinate to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classsoftware_1_1snake_a6d6413e21ae4e81f1d84ae673dfbfd6b}\label{classsoftware_1_1snake_a6d6413e21ae4e81f1d84ae673dfbfd6b} 
+\index{software::snake@{software::snake}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!software::snake@{software::snake}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily void software\+::snake\+::set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Set the direction object of the snake. Can not be no direction, must be up, right, lef or down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & New direction to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+snake.\+hpp\item 
+snake.\+cpp\end{DoxyCompactItemize}

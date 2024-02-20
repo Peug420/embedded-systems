@@ -1,0 +1,76 @@
+\doxysection{software\+::game Class Reference}
+\hypertarget{classsoftware_1_1game}{}\label{classsoftware_1_1game}\index{software::game@{software::game}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsoftware_1_1game_ac485c76221681746303160cf4a3a99ab}{game}} (\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware\+::led\+\_\+matrix}} \+\_\+led\+Matrix, \mbox{\hyperlink{classhardware_1_1joy__stick}{hardware\+::joy\+\_\+stick}} \+\_\+joy\+Stick)
+\begin{DoxyCompactList}\small\item\em Construct a new game object. \end{DoxyCompactList}\item 
+\Hypertarget{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6}\label{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}game} ()
+\begin{DoxyCompactList}\small\item\em Destroy the game object. \end{DoxyCompactList}\item 
+\Hypertarget{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f}\label{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Should be called shortly after the object is constructed. Initializes the led\+Matrix\+\_\+ object and the joy\+Stick\+\_\+ object by calling their init functions. Unsets all pixels in game\+Board\+\_\+. Sets a random inital direction and a random start point for the snake. The random startpoint is in an inner square which is 70\% of the game board size. Spawns 2 randomly placed foods on the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f}{exec}} ()
+\begin{DoxyCompactList}\small\item\em Executes one frame of the game, whereby a frame and a move of the snake is the same cycle. Thus the game speed is controlled by the rate of calling exec. Should be called about every 300 ms for playable results. Returns if the game is lost. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Not yet implemented. Should not be used. At current state just returns if the joy stick is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsoftware_1_1game_ac485c76221681746303160cf4a3a99ab}\label{classsoftware_1_1game_ac485c76221681746303160cf4a3a99ab} 
+\index{software::game@{software::game}!game@{game}}
+\index{game@{game}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{game()}{game()}}
+{\footnotesize\ttfamily software\+::game\+::game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware\+::led\+\_\+matrix}}}]{\+\_\+led\+Matrix,  }\item[{\mbox{\hyperlink{classhardware_1_1joy__stick}{hardware\+::joy\+\_\+stick}}}]{\+\_\+joy\+Stick }\end{DoxyParamCaption})}
+
+
+
+Construct a new game object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+led\+Matrix} & Object for storing the LED information, setting colours and controlling higher graphical functionality. \\
+\hline
+{\em \+\_\+joy\+Stick} & Object for getting directional information of the connected joy stick. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f}\label{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f} 
+\index{software::game@{software::game}!exec@{exec}}
+\index{exec@{exec}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily bool software\+::game\+::exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Executes one frame of the game, whereby a frame and a move of the snake is the same cycle. Thus the game speed is controlled by the rate of calling exec. Should be called about every 300 ms for playable results. Returns if the game is lost. 
+
+\begin{DoxyReturn}{Returns}
+true Game can continue. 
+
+false Game is lost. 
+\end{DoxyReturn}
+\Hypertarget{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}\label{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442} 
+\index{software::game@{software::game}!menu@{menu}}
+\index{menu@{menu}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily bool software\+::game\+::menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Not yet implemented. Should not be used. At current state just returns if the joy stick is pressed. 
+
+\begin{DoxyReturn}{Returns}
+true Joy stick is pressed. 
+
+false Joy stick is not pressed. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game.\+hpp\item 
+game.\+cpp\end{DoxyCompactItemize}

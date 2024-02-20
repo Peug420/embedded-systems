@@ -1,0 +1,49 @@
+\doxysection{joy\+\_\+stick.\+hpp}
+\hypertarget{joy__stick_8hpp_source}{}\label{joy__stick_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_joy\_stick\_header\_included\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_joy\_stick\_header\_included\_\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <sys/\_stdint.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }hardware\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhardware_1_1joy__stick}{joy\_stick}}\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ pins}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ buttonPin\_;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ vrxPin\_;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ vryPin\_;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ resolution}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ centerPoint\_\{2047\};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ centerDetectRadius\_\{1000\};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ setup}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ initialized\_\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOutOfDetectBand(\textcolor{keyword}{const}\ int32\_t\ \&val);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOutOfDetectRadius(uint32\_t\ x,\ uint32\_t\ y);\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91}{joy\_stick}}(uint8\_t\ \_buttonPin,\ uint8\_t\ \_vrxPin,\ uint8\_t\ \_vryPin);}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91}{joy\_stick}}(\mbox{\hyperlink{classhardware_1_1joy__stick}{joy\_stick}}\ \&t);}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844}{\string~joy\_stick}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{direction}}\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ noDirection,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ up,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ down,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ left,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ right}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312}{init}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{direction}}\ \mbox{\hyperlink{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}{getDirection}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classhardware_1_1joy__stick_ab5928e88ac1da3f1051d3531bc4180b2}{isPressed}}();}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_joy\_stick\_header\_included\_\_}}
+
+\end{DoxyCode}

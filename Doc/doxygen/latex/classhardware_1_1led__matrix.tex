@@ -1,0 +1,177 @@
+\doxysection{hardware\+::led\+\_\+matrix Class Reference}
+\hypertarget{classhardware_1_1led__matrix}{}\label{classhardware_1_1led__matrix}\index{hardware::led\_matrix@{hardware::led\_matrix}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classhardware_1_1led__matrix_a5072521736599c991ee08815db37bfec}\label{classhardware_1_1led__matrix_a5072521736599c991ee08815db37bfec} 
+enum \mbox{\hyperlink{classhardware_1_1led__matrix_a5072521736599c991ee08815db37bfec}{color\+Pixel}} \{ {\bfseries obstacle} = CRGB\+::Red
+, {\bfseries tail} = CRGB\+::Yellow
+, {\bfseries food} = CRGB\+::Green
+, {\bfseries head} = CRGB\+::Blue
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the default colors for every game pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classhardware_1_1led__matrix_a917d366a065ec85a9fc09e4a3dc4534f}\label{classhardware_1_1led__matrix_a917d366a065ec85a9fc09e4a3dc4534f} 
+{\bfseries led\+\_\+matrix} ()
+\begin{DoxyCompactList}\small\item\em Construct a new led matrix object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhardware_1_1led__matrix_a62bfc3f298e22c9cbd0e1a4e1538f659}{led\+\_\+matrix}} (\mbox{\hyperlink{classhardware_1_1led__matrix}{led\+\_\+matrix}} \&t)
+\begin{DoxyCompactList}\small\item\em Copy construct for a new led matrix object. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1led__matrix_a0cd3124fe8ec68748d8e4e175948383e}\label{classhardware_1_1led__matrix_a0cd3124fe8ec68748d8e4e175948383e} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}led\+\_\+matrix} ()
+\begin{DoxyCompactList}\small\item\em Destroy the led matrix object. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1led__matrix_a6645552781c769266bb1777029e45aa4}\label{classhardware_1_1led__matrix_a6645552781c769266bb1777029e45aa4} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Init function for this object. Need to be called shortly after initialisation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}{set\+Pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, \mbox{\hyperlink{classhardware_1_1led__matrix_a5072521736599c991ee08815db37bfec}{color\+Pixel}} color)
+\begin{DoxyCompactList}\small\item\em Set the color from the default colors of a coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhardware_1_1led__matrix_a414e301d64a180aa8e200f8d7071208f}{set\+Pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Set the color of a coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhardware_1_1led__matrix_a71e5b74f065d6da8b9a3c1535beac767}{unset\+Pixel}} (uint16\+\_\+t x, uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Unsets the pixel by setting the color value to 0 making the LED black. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhardware_1_1led__matrix_a55dc23e80713268b7c88accdfd0614b2}{print\+Text}} (const char \texorpdfstring{$\ast$}{*}text, int16\+\_\+t x, int16\+\_\+t y, CRGB\+::\+HTMLColor\+Code color, bool wrap)
+\begin{DoxyCompactList}\small\item\em Print text on the led matrix. Uses Fast\+LED Neomatrix library. Text could wrap and scroll. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhardware_1_1led__matrix_a5559c1a99d3c7aa6429751c6708a6576}{set\+Brightness}} (uint8\+\_\+t brightn)
+\begin{DoxyCompactList}\small\item\em Set the brightness of the led matrix. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1led__matrix_afd74254059fb5b6e6dfaea2984625e32}\label{classhardware_1_1led__matrix_afd74254059fb5b6e6dfaea2984625e32} 
+void {\bfseries output\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Outputs the content of the leds\+\_\+ array to the physical led matrix. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1led__matrix_abca80e8ecdaf2bcbdad1b03054e93aae}\label{classhardware_1_1led__matrix_abca80e8ecdaf2bcbdad1b03054e93aae} 
+void {\bfseries clear\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Clears the content in leds\+\_\+ matrix. If this should take effect on the physical matrix, \doxylink{classhardware_1_1led__matrix_afd74254059fb5b6e6dfaea2984625e32}{output\+Matrix()} should be called aferwards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classhardware_1_1led__matrix_a0f2ab7e8708c828444b65cbc667a4310}\label{classhardware_1_1led__matrix_a0f2ab7e8708c828444b65cbc667a4310} 
+uint8\+\_\+t {\bfseries brightness\+\_\+} \{40\}
+\begin{DoxyCompactList}\small\item\em Brightness of the leds on the matrix. Should not be too low, to avoid weird side effects. Too high values could also lead to weird side effects or just not working matrix, due to not enough power delivery. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1led__matrix_a4302914e68bb9f044e595d59b2a852da}\label{classhardware_1_1led__matrix_a4302914e68bb9f044e595d59b2a852da} 
+bool {\bfseries initailized\+\_\+} \{false\}
+\begin{DoxyCompactList}\small\item\em Is set true, when \doxylink{classhardware_1_1led__matrix_a6645552781c769266bb1777029e45aa4}{init()} is called. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1led__matrix_aa7a53ad02140bb625459acc53d0201ca}\label{classhardware_1_1led__matrix_aa7a53ad02140bb625459acc53d0201ca} 
+CRGB {\bfseries leds\+\_\+} \mbox{[}NUM\+\_\+\+LEDS\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matrix of CRGB objects for setting the color values of the LEDs. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1led__matrix_a7128883e9f48fc02081bd9e66d9ed7e0}\label{classhardware_1_1led__matrix_a7128883e9f48fc02081bd9e66d9ed7e0} 
+Fast\+LED\+\_\+\+Neo\+Matrix \texorpdfstring{$\ast$}{*} {\bfseries matrix\+\_\+}
+\begin{DoxyCompactList}\small\item\em Object of the Fast\+LED Neomatrix library for controlling LEDs. This is used for higher graphical functionality like scrolling text for example. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhardware_1_1led__matrix_a62bfc3f298e22c9cbd0e1a4e1538f659}\label{classhardware_1_1led__matrix_a62bfc3f298e22c9cbd0e1a4e1538f659} 
+\index{hardware::led\_matrix@{hardware::led\_matrix}!led\_matrix@{led\_matrix}}
+\index{led\_matrix@{led\_matrix}!hardware::led\_matrix@{hardware::led\_matrix}}
+\doxysubsubsection{\texorpdfstring{led\_matrix()}{led\_matrix()}}
+{\footnotesize\ttfamily hardware\+::led\+\_\+matrix\+::led\+\_\+matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhardware_1_1led__matrix}{led\+\_\+matrix}} \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Copy construct for a new led matrix object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Object to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhardware_1_1led__matrix_a55dc23e80713268b7c88accdfd0614b2}\label{classhardware_1_1led__matrix_a55dc23e80713268b7c88accdfd0614b2} 
+\index{hardware::led\_matrix@{hardware::led\_matrix}!printText@{printText}}
+\index{printText@{printText}!hardware::led\_matrix@{hardware::led\_matrix}}
+\doxysubsubsection{\texorpdfstring{printText()}{printText()}}
+{\footnotesize\ttfamily void hardware\+::led\+\_\+matrix\+::print\+Text (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{CRGB\+::\+HTMLColor\+Code}]{color,  }\item[{bool}]{wrap }\end{DoxyParamCaption})}
+
+
+
+Print text on the led matrix. Uses Fast\+LED Neomatrix library. Text could wrap and scroll. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Character array of the text to print. \\
+\hline
+{\em x} & TODO where is the starting point? \\
+\hline
+{\em y} & TODO \\
+\hline
+{\em color} & TODO what does this option? \\
+\hline
+{\em wrap} & If true, text wraps around edges. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhardware_1_1led__matrix_a5559c1a99d3c7aa6429751c6708a6576}\label{classhardware_1_1led__matrix_a5559c1a99d3c7aa6429751c6708a6576} 
+\index{hardware::led\_matrix@{hardware::led\_matrix}!setBrightness@{setBrightness}}
+\index{setBrightness@{setBrightness}!hardware::led\_matrix@{hardware::led\_matrix}}
+\doxysubsubsection{\texorpdfstring{setBrightness()}{setBrightness()}}
+{\footnotesize\ttfamily void hardware\+::led\+\_\+matrix\+::set\+Brightness (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{brightn }\end{DoxyParamCaption})}
+
+
+
+Set the brightness of the led matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em brightn} & Brightness to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}\label{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc} 
+\index{hardware::led\_matrix@{hardware::led\_matrix}!setPixel@{setPixel}}
+\index{setPixel@{setPixel}!hardware::led\_matrix@{hardware::led\_matrix}}
+\doxysubsubsection{\texorpdfstring{setPixel()}{setPixel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void hardware\+::led\+\_\+matrix\+::set\+Pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{classhardware_1_1led__matrix_a5072521736599c991ee08815db37bfec}{color\+Pixel}}}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the color from the default colors of a coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X value of the coordinate to set. \\
+\hline
+{\em y} & Y value of the coordinate to set. \\
+\hline
+{\em color} & Default color enum. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhardware_1_1led__matrix_a414e301d64a180aa8e200f8d7071208f}\label{classhardware_1_1led__matrix_a414e301d64a180aa8e200f8d7071208f} 
+\index{hardware::led\_matrix@{hardware::led\_matrix}!setPixel@{setPixel}}
+\index{setPixel@{setPixel}!hardware::led\_matrix@{hardware::led\_matrix}}
+\doxysubsubsection{\texorpdfstring{setPixel()}{setPixel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void hardware\+::led\+\_\+matrix\+::set\+Pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the color of a coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X value of the coordinate to set. \\
+\hline
+{\em y} & Y value of the coordinate to set. \\
+\hline
+{\em color} & Color value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhardware_1_1led__matrix_a71e5b74f065d6da8b9a3c1535beac767}\label{classhardware_1_1led__matrix_a71e5b74f065d6da8b9a3c1535beac767} 
+\index{hardware::led\_matrix@{hardware::led\_matrix}!unsetPixel@{unsetPixel}}
+\index{unsetPixel@{unsetPixel}!hardware::led\_matrix@{hardware::led\_matrix}}
+\doxysubsubsection{\texorpdfstring{unsetPixel()}{unsetPixel()}}
+{\footnotesize\ttfamily void hardware\+::led\+\_\+matrix\+::unset\+Pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Unsets the pixel by setting the color value to 0 making the LED black. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X value of the coordinate to set. \\
+\hline
+{\em y} & Y value of the coordinate to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+led\+\_\+matrix.\+hpp\item 
+led\+\_\+matrix.\+cpp\end{DoxyCompactItemize}

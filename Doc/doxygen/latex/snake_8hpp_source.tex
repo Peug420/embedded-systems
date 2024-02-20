@@ -1,0 +1,37 @@
+\doxysection{snake.\+hpp}
+\hypertarget{snake_8hpp_source}{}\label{snake_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_snake\_header\_included\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_snake\_header\_included\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}led\_matrix.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}joy\_stick.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }software\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsoftware_1_1snake}{snake}}\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ std::deque<hardware::pixelCoordinate>\ snake\_;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware::joy\_stick::direction}}\ snakeDirection\_;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ initialized\_\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keyword}{const}\ \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ \&coord);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classsoftware_1_1snake_af9202daf7c4d1961ae1e9df4ef864954}{snake}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classsoftware_1_1snake_a80ed9084a4f45a15cff651a55e7bf6d9}{\string~snake}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsoftware_1_1snake_a69738ee10fd921447b478e6d9031e3b2}{init}}(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord,\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware::joy\_stick::direction}}\ dir);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsoftware_1_1snake_ac7709e0205f52adc33be53b4fdcd4594}{move}}(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsoftware_1_1snake_a7ef24dcf7f58202c420a010ac14d3a34}{grow}}(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord);}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ \mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ \mbox{\hyperlink{classsoftware_1_1snake_a452b67ad805a0a0f39f5593fdd6b2a12}{getTailCoord}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware::joy\_stick::direction}}\ \mbox{\hyperlink{classsoftware_1_1snake_a9b2210892507bac965c567f89d3fd218}{getDirection}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsoftware_1_1snake_a6d6413e21ae4e81f1d84ae673dfbfd6b}{setDirection}}(\mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware::joy\_stick::direction}}\ dir);}
+\DoxyCodeLine{00104\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classsoftware_1_1snake_a366ac68925ebc637e8a9bca536fbe53f}{getSnakeLength}}();}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_snake\_header\_included\_\_}}
+
+\end{DoxyCode}

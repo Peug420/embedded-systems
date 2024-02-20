@@ -1,0 +1,71 @@
+\doxysection{led\+\_\+matrix.\+hpp}
+\hypertarget{led__matrix_8hpp_source}{}\label{led__matrix_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_led\_matrix\_header\_included\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_led\_matrix\_header\_included\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Adafruit\_GFX.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <FastLED\_NeoMatrix.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <FastLED.h>}\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ official\ FastLed\ 3.6.0\ release\ doesnt\ work\ (missing\ uno\ r4\ minima\ support)}}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \#1523\ from\ facchinm\ (bit\ buggy\ but\ works)\ (04.12.2023)-\/-\/>\ https://github.com/FastLED/FastLED/tree/0398b9a99901d00044de821ed86e8537995f561b\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ PSTR}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \#define\ PSTR\ }\textcolor{comment}{//\ Make\ Arduino\ Due\ happy}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ COLOR\_ORDER\ \ \ GRB\ \ \ \ \ }\textcolor{comment}{//GRB\ \ \ \ \ breaks\ if\ changed}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ CHIPSET\ \ \ \ \ \ \ WS2812B\ }\textcolor{comment}{//WS2812B\ breaks\ if\ changed}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ LED\_PIN\ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MATRIX\_WIDTH\ \ 16}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MATRIX\_HEIGHT\ 16}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ NUM\_LEDS\ \ \ \ \ \ (MATRIX\_HEIGHT\ *\ MATRIX\_WIDTH)}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }hardware\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{pixelCoordinate}}\ \{}
+\DoxyCodeLine{00023\ \ \ uint8\_t\ x\_;}
+\DoxyCodeLine{00024\ \ \ uint8\_t\ y\_;}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}{increaseX}}();}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d}{increaseY}}();}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1}{decreaseX}}();}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}{decreaseY}}();}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{pixelCoordinate}}\&\ first,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{pixelCoordinate}}\&\ second)\ \{}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{return}\ (first.x\_\ ==\ second.x\_)\ \&\&\ (first.y\_\ ==\ second.y\_);\ }
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhardware_1_1led__matrix}{led\_matrix}}\ \{}
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00068\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classhardware_1_1led__matrix_a0f2ab7e8708c828444b65cbc667a4310}{brightness\_}}\{40\};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classhardware_1_1led__matrix_a4302914e68bb9f044e595d59b2a852da}{initailized\_}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00078\ \ \ \ \ CRGB\ \mbox{\hyperlink{classhardware_1_1led__matrix_aa7a53ad02140bb625459acc53d0201ca}{leds\_}}[NUM\_LEDS];}
+\DoxyCodeLine{00085\ \ \ \ \ FastLED\_NeoMatrix\ *\mbox{\hyperlink{classhardware_1_1led__matrix_a7128883e9f48fc02081bd9e66d9ed7e0}{matrix\_}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1led__matrix_a917d366a065ec85a9fc09e4a3dc4534f}{led\_matrix}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1led__matrix_a917d366a065ec85a9fc09e4a3dc4534f}{led\_matrix}}(\mbox{\hyperlink{classhardware_1_1led__matrix}{led\_matrix}}\ \&t);}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1led__matrix_a0cd3124fe8ec68748d8e4e175948383e}{\string~led\_matrix}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classhardware_1_1led__matrix_a5072521736599c991ee08815db37bfec}{colorPixel}}\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ obstacle\ =\ CRGB::Red,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ tail\ \ \ \ \ =\ CRGB::Yellow,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ food\ \ \ \ \ =\ CRGB::Green,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ head\ \ \ \ \ =\ CRGB::Blue}
+\DoxyCodeLine{00113\ \ \ \ \ \};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_a6645552781c769266bb1777029e45aa4}{init}}();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\#\#\#\#\#\ visualisation\ functions\ \#\#\#\#\#}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}{setPixel}}(uint16\_t\ x,\ uint16\_t\ y,\ \mbox{\hyperlink{classhardware_1_1led__matrix_a5072521736599c991ee08815db37bfec}{colorPixel}}\ color);}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}{setPixel}}(uint16\_t\ x,\ uint16\_t\ y,\ uint32\_t\ color);}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_a71e5b74f065d6da8b9a3c1535beac767}{unsetPixel}}(uint16\_t\ x,\ uint16\_t\ y);}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_a55dc23e80713268b7c88accdfd0614b2}{printText}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *text,\ int16\_t\ x,\ int16\_t\ y,\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CRGB::HTMLColorCode\ color,\ \textcolor{keywordtype}{bool}\ wrap);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_a5559c1a99d3c7aa6429751c6708a6576}{setBrightness}}(uint8\_t\ brightn);}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_afd74254059fb5b6e6dfaea2984625e32}{outputMatrix}}();}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhardware_1_1led__matrix_abca80e8ecdaf2bcbdad1b03054e93aae}{clearMatrix}}();}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_led\_matrix\_header\_included\_\_}}
+
+\end{DoxyCode}

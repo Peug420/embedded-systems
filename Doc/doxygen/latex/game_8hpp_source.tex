@@ -1,0 +1,59 @@
+\doxysection{game.\+hpp}
+\hypertarget{game_8hpp_source}{}\label{game_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_game\_header\_included\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_game\_header\_included\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}snake.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}led\_matrix.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}joy\_stick.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }software\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsoftware_1_1game}{game}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum}\ gameMode\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ easy,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ normal,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ hard}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum}\ pixelType\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ unset,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ snakeHead,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ snakeTail,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ food,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ obstacle}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//std::array<std::array<pixelType,\ MATRIX\_WIDTH>,\ MATRIX\_HEIGHT>\ gameBoard\_;}}
+\DoxyCodeLine{00042\ \ \ \ \ pixelType\ gameBoard\_[MATRIX\_WIDTH][MATRIX\_HEIGHT];}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1led__matrix}{hardware::led\_matrix}}\ ledMatrix\_;}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classhardware_1_1joy__stick}{hardware::joy\_stick}}\ joyStick\_;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classsoftware_1_1snake}{software::snake}}\ snake\_;}
+\DoxyCodeLine{00062\ \ \ \ \ gameMode\ currentGameMode\_\{gameMode::normal\};}
+\DoxyCodeLine{00067\ \ \ \ \ uint8\_t\ numberOfFood\_\{0\};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ setPixel(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord,\ pixelType\ type);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPixelFree(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPixelFood(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPixelObstacle(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPixelSnake(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord);}
+\DoxyCodeLine{00114\ \ \ \ \ pixelType\ getPixelType(\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}}\ coord);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ loseGame();}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ spawnFood(\textcolor{keyword}{const}\ uint8\_t\ \&number);}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ makeMove();}
+\DoxyCodeLine{00143\ \ \ }
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classsoftware_1_1game_ac485c76221681746303160cf4a3a99ab}{game}}(\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware::led\_matrix}}\ \_ledMatrix,\ \mbox{\hyperlink{classhardware_1_1joy__stick}{hardware::joy\_stick}}\ \_joyStick);}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6}{\string~game}}();}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f}{init}}();}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f}{exec}}();}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}{menu}}();}
+\DoxyCodeLine{00188\ \};}
+\DoxyCodeLine{00189\ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_game\_header\_included\_\_}}
+
+\end{DoxyCode}

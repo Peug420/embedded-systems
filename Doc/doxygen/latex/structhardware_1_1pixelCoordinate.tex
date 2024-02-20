@@ -1,0 +1,91 @@
+\doxysection{hardware\+::pixel\+Coordinate Struct Reference}
+\hypertarget{structhardware_1_1pixelCoordinate}{}\label{structhardware_1_1pixelCoordinate}\index{hardware::pixelCoordinate@{hardware::pixelCoordinate}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}{increaseX}} ()
+\begin{DoxyCompactList}\small\item\em Increases the x\+\_\+ value by 1, but not higher than the MATRIX\+\_\+\+HEIGHT. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d}{increaseY}} ()
+\begin{DoxyCompactList}\small\item\em Increases the y\+\_\+ value by 1, but not higher than the MATRIX\+\_\+\+WIDTH. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1}{decreaseX}} ()
+\begin{DoxyCompactList}\small\item\em Decreases the x\+\_\+ value by 1, but not less than 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}{decreaseY}} ()
+\begin{DoxyCompactList}\small\item\em Decreases the y\+\_\+ value by 1, but not less than 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structhardware_1_1pixelCoordinate_af7b10b4a47ba66d752773e7b3afd6a48}\label{structhardware_1_1pixelCoordinate_af7b10b4a47ba66d752773e7b3afd6a48} 
+uint8\+\_\+t {\bfseries x\+\_\+}
+\item 
+\Hypertarget{structhardware_1_1pixelCoordinate_ae8b943b1029d4a0c74092f1398b884cb}\label{structhardware_1_1pixelCoordinate_ae8b943b1029d4a0c74092f1398b884cb} 
+uint8\+\_\+t {\bfseries y\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1}\label{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1} 
+\index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!decreaseX@{decreaseX}}
+\index{decreaseX@{decreaseX}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
+\doxysubsubsection{\texorpdfstring{decreaseX()}{decreaseX()}}
+{\footnotesize\ttfamily bool hardware\+::pixel\+Coordinate\+::decreaseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decreases the x\+\_\+ value by 1, but not less than 0. 
+
+\begin{DoxyReturn}{Returns}
+true New value is not out of matrix dimension. 
+
+false New value is out of matrix dimension. 
+\end{DoxyReturn}
+\Hypertarget{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}\label{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9} 
+\index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!decreaseY@{decreaseY}}
+\index{decreaseY@{decreaseY}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
+\doxysubsubsection{\texorpdfstring{decreaseY()}{decreaseY()}}
+{\footnotesize\ttfamily bool hardware\+::pixel\+Coordinate\+::decreaseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decreases the y\+\_\+ value by 1, but not less than 0. 
+
+\begin{DoxyReturn}{Returns}
+true New value is not out of matrix dimension. 
+
+false New value is out of matrix dimension. 
+\end{DoxyReturn}
+\Hypertarget{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}\label{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703} 
+\index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!increaseX@{increaseX}}
+\index{increaseX@{increaseX}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
+\doxysubsubsection{\texorpdfstring{increaseX()}{increaseX()}}
+{\footnotesize\ttfamily bool hardware\+::pixel\+Coordinate\+::increaseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increases the x\+\_\+ value by 1, but not higher than the MATRIX\+\_\+\+HEIGHT. 
+
+\begin{DoxyReturn}{Returns}
+true New value is not out of matrix dimension MATRIX\+\_\+\+HEIGHT. 
+
+false New value is out of matrix dimension MATRIX\+\_\+\+HEIGHT. 
+\end{DoxyReturn}
+\Hypertarget{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d}\label{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d} 
+\index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!increaseY@{increaseY}}
+\index{increaseY@{increaseY}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
+\doxysubsubsection{\texorpdfstring{increaseY()}{increaseY()}}
+{\footnotesize\ttfamily bool hardware\+::pixel\+Coordinate\+::increaseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increases the y\+\_\+ value by 1, but not higher than the MATRIX\+\_\+\+WIDTH. 
+
+\begin{DoxyReturn}{Returns}
+true New value is not out of matrix dimension MATRIX\+\_\+\+WIDTH. 
+
+false New value is out of matrix dimension MATRIX\+\_\+\+WIDTH. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+led\+\_\+matrix.\+hpp\item 
+led\+\_\+matrix.\+cpp\end{DoxyCompactItemize}

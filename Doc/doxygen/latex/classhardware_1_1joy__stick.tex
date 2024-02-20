@@ -1,0 +1,106 @@
+\doxysection{hardware\+::joy\+\_\+stick Class Reference}
+\hypertarget{classhardware_1_1joy__stick}{}\label{classhardware_1_1joy__stick}\index{hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}\label{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f} 
+enum \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{direction}} \{ \newline
+{\bfseries no\+Direction}
+, {\bfseries up}
+, {\bfseries down}
+, {\bfseries left}
+, \newline
+{\bfseries right}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for the possible inputs of the joy stick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91}{joy\+\_\+stick}} (uint8\+\_\+t \+\_\+button\+Pin, uint8\+\_\+t \+\_\+vrx\+Pin, uint8\+\_\+t \+\_\+vry\+Pin)
+\begin{DoxyCompactList}\small\item\em Construct a new joy stick object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032}{joy\+\_\+stick}} (\mbox{\hyperlink{classhardware_1_1joy__stick}{joy\+\_\+stick}} \&t)
+\begin{DoxyCompactList}\small\item\em Copy constructor for a new joy stick object. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844}\label{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}joy\+\_\+stick} ()
+\begin{DoxyCompactList}\small\item\em Destroy the joy stick object. \end{DoxyCompactList}\item 
+\Hypertarget{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312}\label{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Init function for this object. Need to be called shortly after initialisation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{direction}} \mbox{\hyperlink{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}{get\+Direction}} ()
+\begin{DoxyCompactList}\small\item\em Get the current direction of the joy stick. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classhardware_1_1joy__stick_ab5928e88ac1da3f1051d3531bc4180b2}{is\+Pressed}} ()
+\begin{DoxyCompactList}\small\item\em Returns if the button is currently pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91}\label{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91} 
+\index{hardware::joy\_stick@{hardware::joy\_stick}!joy\_stick@{joy\_stick}}
+\index{joy\_stick@{joy\_stick}!hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsubsection{\texorpdfstring{joy\_stick()}{joy\_stick()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily hardware\+::joy\+\_\+stick\+::joy\+\_\+stick (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{\+\_\+button\+Pin,  }\item[{uint8\+\_\+t}]{\+\_\+vrx\+Pin,  }\item[{uint8\+\_\+t}]{\+\_\+vry\+Pin }\end{DoxyParamCaption})}
+
+
+
+Construct a new joy stick object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+button\+Pin} & Pin number of the button pin. \\
+\hline
+{\em \+\_\+vrx\+Pin} & Pin number of the vrx pin. \\
+\hline
+{\em \+\_\+vry\+Pin} & Pin number of the vry pin. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032}\label{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032} 
+\index{hardware::joy\_stick@{hardware::joy\_stick}!joy\_stick@{joy\_stick}}
+\index{joy\_stick@{joy\_stick}!hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsubsection{\texorpdfstring{joy\_stick()}{joy\_stick()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily hardware\+::joy\+\_\+stick\+::joy\+\_\+stick (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhardware_1_1joy__stick}{joy\+\_\+stick}} \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Copy constructor for a new joy stick object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Object of \doxylink{classhardware_1_1joy__stick}{joy\+\_\+stick} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}\label{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015} 
+\index{hardware::joy\_stick@{hardware::joy\_stick}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware\+::joy\+\_\+stick\+::direction}} hardware\+::joy\+\_\+stick\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current direction of the joy stick. 
+
+\begin{DoxyReturn}{Returns}
+direction Enum of all possible inputs. 
+\end{DoxyReturn}
+\Hypertarget{classhardware_1_1joy__stick_ab5928e88ac1da3f1051d3531bc4180b2}\label{classhardware_1_1joy__stick_ab5928e88ac1da3f1051d3531bc4180b2} 
+\index{hardware::joy\_stick@{hardware::joy\_stick}!isPressed@{isPressed}}
+\index{isPressed@{isPressed}!hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsubsection{\texorpdfstring{isPressed()}{isPressed()}}
+{\footnotesize\ttfamily bool hardware\+::joy\+\_\+stick\+::is\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns if the button is currently pressed. 
+
+\begin{DoxyReturn}{Returns}
+true Button is pressed. 
+
+false Button is not pressed. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+joy\+\_\+stick.\+hpp\item 
+joy\+\_\+stick.\+cpp\end{DoxyCompactItemize}
