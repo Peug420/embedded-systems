@@ -1,17 +1,24 @@
-/*      display biopotential distribution on 16x16 rgb led matrix 
-        Projekt Medizinische Elektronik WS2023 HTWK Leipzig Prof. Laukner
-        Joris Bakker, Julius Zeng, Luis Klaus 20EIB
-        (c) Julius Zeng 04.12.2023
-*/      
+/*      sanke game on 16x16 rgb led matrix 
+        Projekt Embedded Systems WS2023/24 HTWK Leipzig Prof. Dr.-Ing.
+        Pretschner und Marco Braun
+        Thomas Rubin, Julius Zeng 20EIB
+        (c) Thomas Rubin 12.03.2024
+*/
 
 #include "game.hpp"
 #include "joy_stick.hpp"
 #include "led_matrix.hpp"
 
-hardware::led_matrix matrix{};
-hardware::joy_stick joyStick{22, 26, 27};
+#define PIN_JOYSTICK_BUTTON 22
+#define PIN_JOYSTICK_VRX 26
+#define PIN_JOYSTICK_VRY 27
 
-software::game game{matrix, joyStick};
+hardware::led_matrix matrix{};
+hardware::joy_stick joyStick{ PIN_JOYSTICK_BUTTON,
+                              PIN_JOYSTICK_VRX,
+                              PIN_JOYSTICK_VRY };
+
+software::game game{ matrix, joyStick };
 
 bool gameActive = false;
 
@@ -31,9 +38,9 @@ void setup() {
   Serial.println("Finished Setup");
 }
 
-void loop(){
-  if(gameActive) {
-    if(!game.exec()) {
+void loop() {
+  if (gameActive) {
+    if (!game.exec()) {
       Serial.println("You lose!");
       gameActive = false;
       delay(2000);
