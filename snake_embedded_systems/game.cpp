@@ -2,28 +2,24 @@
 
 // constructor / destrcutor
 
-software::game::game(hardware::led_matrix _ledMatrix, 
-                    hardware::joy_stick _joyStick) :
-                      ledMatrix_(_ledMatrix),
-                      joyStick_(_joyStick),
-                      snake_()
-{
-
+software::game::game(hardware::led_matrix &_ledMatrix,
+                     hardware::joy_stick &_joyStick)
+  : ledMatrix_(_ledMatrix),
+    joyStick_(_joyStick),
+    snake_() {
 }
 
-software::game::~game() 
-{
-  
+software::game::~game() {
 }
 
 // private
 
 void software::game::setPixel(hardware::pixelCoordinate coord, pixelType type) {
-  if(coord.x_ >= MATRIX_WIDTH || coord.y_ >= MATRIX_HEIGHT)
+  if (coord.x_ >= MATRIX_WIDTH || coord.y_ >= MATRIX_HEIGHT)
     return;
   gameBoard_[coord.x_][coord.y_] = type;
 
-  switch(type) {
+  switch (type) {
     case pixelType::snakeHead:
       ledMatrix_.setPixel(coord.x_, coord.y_, hardware::led_matrix::colorPixel::head);
       break;
@@ -43,26 +39,25 @@ void software::game::setPixel(hardware::pixelCoordinate coord, pixelType type) {
 }
 
 bool software::game::isPixelFree(hardware::pixelCoordinate coord) {
-  if(gameBoard_[coord.x_][coord.y_] == pixelType::unset)
+  if (gameBoard_[coord.x_][coord.y_] == pixelType::unset)
     return true;
   return false;
 }
 
 bool software::game::isPixelFood(hardware::pixelCoordinate coord) {
-  if(gameBoard_[coord.x_][coord.y_] == pixelType::food)
+  if (gameBoard_[coord.x_][coord.y_] == pixelType::food)
     return true;
   return false;
 }
 
 bool software::game::isPixelObstacle(hardware::pixelCoordinate coord) {
-  if(gameBoard_[coord.x_][coord.y_] == pixelType::obstacle)
+  if (gameBoard_[coord.x_][coord.y_] == pixelType::obstacle)
     return true;
   return false;
 }
 
 bool software::game::isPixelSnake(hardware::pixelCoordinate coord) {
-  if((gameBoard_[coord.x_][coord.y_] == pixelType::snakeHead) ||
-     (gameBoard_[coord.x_][coord.y_] == pixelType::snakeTail))
+  if ((gameBoard_[coord.x_][coord.y_] == pixelType::snakeHead) || (gameBoard_[coord.x_][coord.y_] == pixelType::snakeTail))
     return true;
   return false;
 }
@@ -74,56 +69,56 @@ software::game::pixelType software::game::getPixelType(hardware::pixelCoordinate
 void software::game::loseGame() {
   const static int16_t charWidth = 6;
 
-  std::string lost{"You lost! Score: " + 
-                  std::to_string(snake_.getSnakeLength())};
+  std::string lost{ "You lost! Score: " + std::to_string(snake_.getSnakeLength()) };
 
-  for(int16_t x=(MATRIX_WIDTH-1); 
-          x>=(static_cast<int16_t>(lost.size())*charWidth * -1); x--) {
+  for (int16_t x = (MATRIX_WIDTH - 1);
+       x >= (static_cast<int16_t>(lost.size()) * charWidth * -1); x--) {
     ledMatrix_.printText(lost.c_str(), x, 10, CRGB::Blue, false);
     delay(100);
   }
+  currentState_ = gameState::menuState;
 }
 
 void software::game::spawnFood(const uint8_t &number) {
-  if(number > 10)
+  if (number > 10)
     return;
-  for(uint8_t i = 0; i < number; ++i) {
+  for (uint8_t i = 0; i < number; ++i) {
     bool spawnSucc = false;
     do {
       uint8_t x = random(MATRIX_WIDTH);
       uint8_t y = random(MATRIX_HEIGHT);
-      hardware::pixelCoordinate newCoord{x, y};
-      if(isPixelFree(newCoord)) {
+      hardware::pixelCoordinate newCoord{ x, y };
+      if (isPixelFree(newCoord)) {
         setPixel(newCoord, pixelType::food);
         spawnSucc = true;
       }
-    } while(!spawnSucc);
+    } while (!spawnSucc);
     ++numberOfFood_;
   }
 }
 
 bool software::game::makeMove() {
   hardware::pixelCoordinate newCoord;
-  switch(snake_.getDirection()) {
+  switch (snake_.getDirection()) {
     case hardware::joy_stick::direction::up:
       newCoord = snake_.getHeadCoord();
-      if(!newCoord.increaseY()) // move is out of game board
+      if (!newCoord.increaseY())  // move is out of game board
         return false;
       break;
     case hardware::joy_stick::direction::down:
       newCoord = snake_.getHeadCoord();
-      if(!newCoord.decreaseY())
-        return false; // move is out of game board
+      if (!newCoord.decreaseY())
+        return false;  // move is out of game board
       break;
     case hardware::joy_stick::direction::left:
       newCoord = snake_.getHeadCoord();
-      if(!newCoord.decreaseX()) // move is out of game board
-        return false; 
+      if (!newCoord.decreaseX())  // move is out of game board
+        return false;
       break;
     case hardware::joy_stick::direction::right:
       newCoord = snake_.getHeadCoord();
-      if(!newCoord.increaseX()) // move is out of game board
-        return false; 
+      if (!newCoord.increaseX())  // move is out of game board
+        return false;
       break;
     case hardware::joy_stick::direction::noDirection:
       return false;
@@ -132,11 +127,11 @@ bool software::game::makeMove() {
       return false;
       break;
   }
-  
-  switch(getPixelType(newCoord)) {
+
+  switch (getPixelType(newCoord)) {
     case pixelType::unset:
       setPixel(snake_.getTailCoord(), pixelType::unset);
-      if(snake_.getSnakeLength() > 1) {
+      if (snake_.getSnakeLength() > 1) {
         setPixel(snake_.getHeadCoord(), pixelType::snakeTail);
         snake_.move(newCoord);
         setPixel(newCoord, pixelType::snakeHead);
@@ -165,15 +160,21 @@ bool software::game::makeMove() {
 void software::game::init() {
   ledMatrix_.init();
   joyStick_.init();
+  initialized_ = true;
+}
 
-  for(size_t x = 0; x < MATRIX_WIDTH; x++) {
-    for(size_t y = 0; y < MATRIX_HEIGHT; y++) {
-      setPixel(hardware::pixelCoordinate{x,y}, pixelType::unset);
+void software::game::start() {
+  if (not initialized_)
+    return;
+
+  for (size_t x = 0; x < MATRIX_WIDTH; x++) {
+    for (size_t y = 0; y < MATRIX_HEIGHT; y++) {
+      setPixel(hardware::pixelCoordinate{ x, y }, pixelType::unset);
     }
   }
 
   hardware::joy_stick::direction dir;
-  switch(random(0, 4)) {
+  switch (random(0, 4)) {
     case 0:
       dir = hardware::joy_stick::direction::up;
       break;
@@ -192,32 +193,42 @@ void software::game::init() {
   }
 
   // initialize snake
-  snake_.init(hardware::pixelCoordinate{random(MATRIX_WIDTH*0.3, 
-                                               MATRIX_WIDTH*0.7), 
-                                        random(MATRIX_HEIGHT*0.3,
-                                               MATRIX_HEIGHT*0.7)}, 
+  snake_.init(hardware::pixelCoordinate{ random(MATRIX_WIDTH * 0.3,
+                                                MATRIX_WIDTH * 0.7),
+                                         random(MATRIX_HEIGHT * 0.3,
+                                                MATRIX_HEIGHT * 0.7) },
               dir);
 
   setPixel(snake_.getHeadCoord(), pixelType::snakeHead);
 
+  numberOfFood_ = 0;
   spawnFood(2);
 
   ledMatrix_.outputMatrix();
+  currentState_ = gameState::running;
+}
+
+void software::game::setGameState(gameState state) {
+  currentState_ = state;
 }
 
 bool software::game::exec() {
+  if (currentState_ != gameState::running)
+    return false;
+
   hardware::joy_stick::direction dir = joyStick_.getDirection();
 
-  if(dir != hardware::joy_stick::direction::noDirection) {
+  if (dir != hardware::joy_stick::direction::noDirection) {
     snake_.setDirection(dir);
   }
 
-  if(!makeMove()) { 
+  if (!makeMove()) {
+    currentState_ = gameState::loseScreen;
     loseGame();
     return false;
   }
 
-  if(numberOfFood_ < 2) {
+  if (numberOfFood_ < 2) {
     spawnFood(2);
   }
 
@@ -227,5 +238,18 @@ bool software::game::exec() {
 }
 
 bool software::game::menu() {
-  return joyStick_.isPressed();
+  if (currentState_ != gameState::menuState)
+    return false;
+  const static int16_t charWidth = 6;
+
+  std::string menu{ "Press to start." };
+
+  for (int16_t x = (MATRIX_WIDTH - 1);
+       x >= (static_cast<int16_t>(menu.size()) * charWidth * -1); x--) {
+    ledMatrix_.printText(menu.c_str(), x, 10, CRGB::Blue, false);
+    if (currentState_ == game::running)
+      return true;
+    delay(100);
+  }
+  return false;
 }

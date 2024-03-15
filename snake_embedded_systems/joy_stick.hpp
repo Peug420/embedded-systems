@@ -7,13 +7,6 @@ namespace hardware {
 
 class joy_stick {
   private:
-    // pins
-    /**
-     * @brief The pin number to which the button pin from the physical joy stick
-     *        is conntected to.
-     * 
-     */
-    const uint8_t buttonPin_;
     /**
      * @brief The pin number to which the vrx pin from the physical joy stick
      *        is conntected to.
@@ -81,11 +74,10 @@ class joy_stick {
     /**
      * @brief Construct a new joy stick object.
      * 
-     * @param _buttonPin Pin number of the button pin.
      * @param _vrxPin Pin number of the vrx pin.
      * @param _vryPin Pin number of the vry pin.
      */
-    joy_stick(uint8_t _buttonPin, uint8_t _vrxPin, uint8_t _vryPin);
+    joy_stick(uint8_t _vrxPin, uint8_t _vryPin);
     /**
      * @brief Copy constructor for a new joy stick object.
      * 
@@ -122,13 +114,6 @@ class joy_stick {
      * @return direction Enum of all possible inputs.
      */
     direction getDirection();
-    /**
-     * @brief Returns if the button is currently pressed.
-     * 
-     * @return true Button is pressed.
-     * @return false Button is not pressed.
-     */
-    bool isPressed();
 };
 }
 

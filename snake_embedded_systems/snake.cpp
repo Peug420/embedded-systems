@@ -22,9 +22,7 @@ bool software::snake::contains(const hardware::pixelCoordinate &coord) {
 // public
 
 void software::snake::init(hardware::pixelCoordinate coord, hardware::joy_stick::direction dir) {
-  if(initialized_)
-    return;
-
+  snake_.clear();
   snake_.push_front(coord);
   snakeDirection_ = dir;
 
