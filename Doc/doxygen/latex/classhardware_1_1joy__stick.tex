@@ -1,9 +1,9 @@
-\doxysection{hardware\+::joy\+\_\+stick Class Reference}
-\hypertarget{classhardware_1_1joy__stick}{}\label{classhardware_1_1joy__stick}\index{hardware::joy\_stick@{hardware::joy\_stick}}
-\doxysubsubsection*{Public Types}
+\hypertarget{classhardware_1_1joy__stick}{}\doxysection{hardware\+::joy\+\_\+stick Class Reference}
+\label{classhardware_1_1joy__stick}\index{hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}\label{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f} 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}\label{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}} 
 enum \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{direction}} \{ \newline
 {\bfseries no\+Direction}
 , {\bfseries up}
@@ -13,31 +13,61 @@ enum \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af49044
 {\bfseries right}
  \}
 \begin{DoxyCompactList}\small\item\em Enum for the possible inputs of the joy stick. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91}{joy\+\_\+stick}} (uint8\+\_\+t \+\_\+button\+Pin, uint8\+\_\+t \+\_\+vrx\+Pin, uint8\+\_\+t \+\_\+vry\+Pin)
+\mbox{\hyperlink{classhardware_1_1joy__stick_ad427ab037cc199ce2b4549e3fbb650ec}{joy\+\_\+stick}} (uint8\+\_\+t \+\_\+vrx\+Pin, uint8\+\_\+t \+\_\+vry\+Pin)
 \begin{DoxyCompactList}\small\item\em Construct a new joy stick object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032}{joy\+\_\+stick}} (\mbox{\hyperlink{classhardware_1_1joy__stick}{joy\+\_\+stick}} \&t)
 \begin{DoxyCompactList}\small\item\em Copy constructor for a new joy stick object. \end{DoxyCompactList}\item 
-\Hypertarget{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844}\label{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}joy\+\_\+stick} ()
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844}\label{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844}} 
+\mbox{\hyperlink{classhardware_1_1joy__stick_a8ee895170fc662708bc43bd58b809844}{$\sim$joy\+\_\+stick}} ()
 \begin{DoxyCompactList}\small\item\em Destroy the joy stick object. \end{DoxyCompactList}\item 
-\Hypertarget{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312}\label{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312} 
-void {\bfseries init} ()
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312}\label{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312}} 
+void \mbox{\hyperlink{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312}{init}} ()
 \begin{DoxyCompactList}\small\item\em Init function for this object. Need to be called shortly after initialisation. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{direction}} \mbox{\hyperlink{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}{get\+Direction}} ()
-\begin{DoxyCompactList}\small\item\em Get the current direction of the joy stick. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classhardware_1_1joy__stick_ab5928e88ac1da3f1051d3531bc4180b2}{is\+Pressed}} ()
-\begin{DoxyCompactList}\small\item\em Returns if the button is currently pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the current direction of the joy stick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classhardware_1_1joy__stick_a5df0d6bb4438fe60e628bc5165d1b0f7}{is\+Out\+Of\+Detect\+Band}} (const int32\+\_\+t \&val)
+\begin{DoxyCompactList}\small\item\em Around every axis, there is an inner band of detection. If the given ADC value is out of this band around the center\+Point\+\_\+, the method returns true. For the band center\+Detect\+Radius\+\_\+ is used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classhardware_1_1joy__stick_adcc9f2a737a96b818eec50ee0dd6d0eb}{is\+Out\+Of\+Detect\+Radius}} (uint32\+\_\+t x, uint32\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Checks if the cartesian coordiante lies outside of the circle with the radius center\+Detect\+Radius\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a6651cc3651211b40dfc12fa8b23096ac}\label{classhardware_1_1joy__stick_a6651cc3651211b40dfc12fa8b23096ac}} 
+const uint8\+\_\+t \mbox{\hyperlink{classhardware_1_1joy__stick_a6651cc3651211b40dfc12fa8b23096ac}{vrx\+Pin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The pin number to which the vrx pin from the physical joy stick is conntected to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_ac232e5621298bc5c2574f060cc1ee924}\label{classhardware_1_1joy__stick_ac232e5621298bc5c2574f060cc1ee924}} 
+const uint8\+\_\+t \mbox{\hyperlink{classhardware_1_1joy__stick_ac232e5621298bc5c2574f060cc1ee924}{vry\+Pin\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The pin number to which the vry pin from the physical joy stick is conntected to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a7db0bb0129348a615de04fc9e4d7ca03}\label{classhardware_1_1joy__stick_a7db0bb0129348a615de04fc9e4d7ca03}} 
+const uint16\+\_\+t \mbox{\hyperlink{classhardware_1_1joy__stick_a7db0bb0129348a615de04fc9e4d7ca03}{center\+Point\+\_\+}} \{2047\}
+\begin{DoxyCompactList}\small\item\em The center of the ADC resolution. The raspberry pi pico has a a 10 bit by default and a 12 bit optionally. The 12 bit is used so the resolution ist 2$^\wedge$12 = 4096 of which 2047 is the half. This is used for calculating the dection radius and detection band. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a5b5b09e7b6dd10d4afcf0e0b8c045332}\label{classhardware_1_1joy__stick_a5b5b09e7b6dd10d4afcf0e0b8c045332}} 
+const uint16\+\_\+t \mbox{\hyperlink{classhardware_1_1joy__stick_a5b5b09e7b6dd10d4afcf0e0b8c045332}{center\+Detect\+Radius\+\_\+}} \{1000\}
+\begin{DoxyCompactList}\small\item\em The radius in which no input is detected. The radius is relative to the maximal resoultion 4096 of each axis. So a directional input will be detected only if in any x or y direction the value from the ADC is greater than the center\+Point\+\_\+ + center\+Detect\+Radius\+\_\+ or less than center\+Point\+\_\+ -\/ center\+Detect\+Radius\+\_\+. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a4e764a689a3be1e5d24a949634db8a4b}\label{classhardware_1_1joy__stick_a4e764a689a3be1e5d24a949634db8a4b}} 
+bool \mbox{\hyperlink{classhardware_1_1joy__stick_a4e764a689a3be1e5d24a949634db8a4b}{initialized\+\_\+}} \{false\}
+\begin{DoxyCompactList}\small\item\em Flag for checking if init was called or not. No mehtod should be used before \mbox{\hyperlink{classhardware_1_1joy__stick_a9495483cbfd6b73445ff66b4174f4312}{init()}} is called and initialized\+\_\+ is set true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 8 of file joy\+\_\+stick.\+hpp.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91}\label{classhardware_1_1joy__stick_a23dc81a7beaf56ea379d7cf6af608b91} 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_ad427ab037cc199ce2b4549e3fbb650ec}\label{classhardware_1_1joy__stick_ad427ab037cc199ce2b4549e3fbb650ec}} 
 \index{hardware::joy\_stick@{hardware::joy\_stick}!joy\_stick@{joy\_stick}}
 \index{joy\_stick@{joy\_stick}!hardware::joy\_stick@{hardware::joy\_stick}}
 \doxysubsubsection{\texorpdfstring{joy\_stick()}{joy\_stick()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily hardware\+::joy\+\_\+stick\+::joy\+\_\+stick (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{\+\_\+button\+Pin,  }\item[{uint8\+\_\+t}]{\+\_\+vrx\+Pin,  }\item[{uint8\+\_\+t}]{\+\_\+vry\+Pin }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily hardware\+::joy\+\_\+stick\+::joy\+\_\+stick (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{\+\_\+vrx\+Pin,  }\item[{uint8\+\_\+t}]{\+\_\+vry\+Pin }\end{DoxyParamCaption})}
 
 
 
@@ -45,14 +75,23 @@ Construct a new joy stick object.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \+\_\+button\+Pin} & Pin number of the button pin. \\
-\hline
 {\em \+\_\+vrx\+Pin} & Pin number of the vrx pin. \\
 \hline
 {\em \+\_\+vry\+Pin} & Pin number of the vry pin. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032}\label{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032} 
+
+
+Definition at line 3 of file joy\+\_\+stick.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5   : \mbox{\hyperlink{classhardware_1_1joy__stick_a6651cc3651211b40dfc12fa8b23096ac}{vrxPin\_}}(\_vrxPin),}
+\DoxyCodeLine{6     \mbox{\hyperlink{classhardware_1_1joy__stick_ac232e5621298bc5c2574f060cc1ee924}{vryPin\_}}(\_vryPin) \{}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032}\label{classhardware_1_1joy__stick_aaf39bb8f2f9823ef77ca95e5dd896032}} 
 \index{hardware::joy\_stick@{hardware::joy\_stick}!joy\_stick@{joy\_stick}}
 \index{joy\_stick@{joy\_stick}!hardware::joy\_stick@{hardware::joy\_stick}}
 \doxysubsubsection{\texorpdfstring{joy\_stick()}{joy\_stick()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -64,13 +103,24 @@ Copy constructor for a new joy stick object.
 
 
 \begin{DoxyParams}{Parameters}
-{\em t} & Object of \doxylink{classhardware_1_1joy__stick}{joy\+\_\+stick} to copy from. \\
+{\em t} & Object of \mbox{\hyperlink{classhardware_1_1joy__stick}{joy\+\_\+stick}} to copy from. \\
 \hline
 \end{DoxyParams}
 
 
+Definition at line 9 of file joy\+\_\+stick.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10   : \mbox{\hyperlink{classhardware_1_1joy__stick_a6651cc3651211b40dfc12fa8b23096ac}{vrxPin\_}}(t.vrxPin\_),}
+\DoxyCodeLine{11     \mbox{\hyperlink{classhardware_1_1joy__stick_ac232e5621298bc5c2574f060cc1ee924}{vryPin\_}}(t.vryPin\_) \{}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}\label{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015} 
+\mbox{\Hypertarget{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}\label{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}} 
 \index{hardware::joy\_stick@{hardware::joy\_stick}!getDirection@{getDirection}}
 \index{getDirection@{getDirection}!hardware::joy\_stick@{hardware::joy\_stick}}
 \doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
@@ -83,24 +133,102 @@ Get the current direction of the joy stick.
 \begin{DoxyReturn}{Returns}
 direction Enum of all possible inputs. 
 \end{DoxyReturn}
-\Hypertarget{classhardware_1_1joy__stick_ab5928e88ac1da3f1051d3531bc4180b2}\label{classhardware_1_1joy__stick_ab5928e88ac1da3f1051d3531bc4180b2} 
-\index{hardware::joy\_stick@{hardware::joy\_stick}!isPressed@{isPressed}}
-\index{isPressed@{isPressed}!hardware::joy\_stick@{hardware::joy\_stick}}
-\doxysubsubsection{\texorpdfstring{isPressed()}{isPressed()}}
-{\footnotesize\ttfamily bool hardware\+::joy\+\_\+stick\+::is\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+Definition at line 34 of file joy\+\_\+stick.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                                                            \{  \textcolor{comment}{//Returns Joystick User input 0 = No Input; 1 = Up; 2 = Down; 3 = Left; 4 = Right;}}
+\DoxyCodeLine{35   \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classhardware_1_1joy__stick_a4e764a689a3be1e5d24a949634db8a4b}{initialized\_}})                                                  \textcolor{comment}{// not initialized}}
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} hardware::joy\_stick::direction::noDirection;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   uint16\_t x = analogRead(\mbox{\hyperlink{classhardware_1_1joy__stick_a6651cc3651211b40dfc12fa8b23096ac}{vrxPin\_}});}
+\DoxyCodeLine{39   uint16\_t y = analogRead(\mbox{\hyperlink{classhardware_1_1joy__stick_ac232e5621298bc5c2574f060cc1ee924}{vryPin\_}});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classhardware_1_1joy__stick_adcc9f2a737a96b818eec50ee0dd6d0eb}{isOutOfDetectRadius}}(x, y)) \{}
+\DoxyCodeLine{42     \textcolor{keywordflow}{if} ((x >= y) \&\& (!\mbox{\hyperlink{classhardware_1_1joy__stick_a5df0d6bb4438fe60e628bc5165d1b0f7}{isOutOfDetectBand}}(y)))}
+\DoxyCodeLine{43       \textcolor{keywordflow}{return} hardware::joy\_stick::direction::up;}
+\DoxyCodeLine{44     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((x < y) \&\& (!\mbox{\hyperlink{classhardware_1_1joy__stick_a5df0d6bb4438fe60e628bc5165d1b0f7}{isOutOfDetectBand}}(y)))}
+\DoxyCodeLine{45       \textcolor{keywordflow}{return} hardware::joy\_stick::direction::down;}
+\DoxyCodeLine{46     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((y >= x) \&\& (!\mbox{\hyperlink{classhardware_1_1joy__stick_a5df0d6bb4438fe60e628bc5165d1b0f7}{isOutOfDetectBand}}(x)))}
+\DoxyCodeLine{47       \textcolor{keywordflow}{return} hardware::joy\_stick::direction::right;}
+\DoxyCodeLine{48     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((y < x) \&\& (!\mbox{\hyperlink{classhardware_1_1joy__stick_a5df0d6bb4438fe60e628bc5165d1b0f7}{isOutOfDetectBand}}(x)))}
+\DoxyCodeLine{49       \textcolor{keywordflow}{return} hardware::joy\_stick::direction::left;}
+\DoxyCodeLine{50   \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keywordflow}{return} hardware::joy\_stick::direction::noDirection;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classhardware_1_1joy__stick_a5df0d6bb4438fe60e628bc5165d1b0f7}\label{classhardware_1_1joy__stick_a5df0d6bb4438fe60e628bc5165d1b0f7}} 
+\index{hardware::joy\_stick@{hardware::joy\_stick}!isOutOfDetectBand@{isOutOfDetectBand}}
+\index{isOutOfDetectBand@{isOutOfDetectBand}!hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsubsection{\texorpdfstring{isOutOfDetectBand()}{isOutOfDetectBand()}}
+{\footnotesize\ttfamily bool hardware\+::joy\+\_\+stick\+::is\+Out\+Of\+Detect\+Band (\begin{DoxyParamCaption}\item[{const int32\+\_\+t \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Returns if the button is currently pressed. 
+Around every axis, there is an inner band of detection. If the given ADC value is out of this band around the center\+Point\+\_\+, the method returns true. For the band center\+Detect\+Radius\+\_\+ is used. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em val} & ADC value to check. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true Button is pressed. 
+true Value is out of the detection band around the center. 
 
-false Button is not pressed. 
+false Value is inside of the detection band around the center. 
 \end{DoxyReturn}
+
+
+Definition at line 17 of file joy\+\_\+stick.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                                             \{}
+\DoxyCodeLine{18   \textcolor{keywordflow}{return} (abs(val -\/ \mbox{\hyperlink{classhardware_1_1joy__stick_a7db0bb0129348a615de04fc9e4d7ca03}{centerPoint\_}}) > \mbox{\hyperlink{classhardware_1_1joy__stick_a5b5b09e7b6dd10d4afcf0e0b8c045332}{centerDetectRadius\_}});}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classhardware_1_1joy__stick_adcc9f2a737a96b818eec50ee0dd6d0eb}\label{classhardware_1_1joy__stick_adcc9f2a737a96b818eec50ee0dd6d0eb}} 
+\index{hardware::joy\_stick@{hardware::joy\_stick}!isOutOfDetectRadius@{isOutOfDetectRadius}}
+\index{isOutOfDetectRadius@{isOutOfDetectRadius}!hardware::joy\_stick@{hardware::joy\_stick}}
+\doxysubsubsection{\texorpdfstring{isOutOfDetectRadius()}{isOutOfDetectRadius()}}
+{\footnotesize\ttfamily bool hardware\+::joy\+\_\+stick\+::is\+Out\+Of\+Detect\+Radius (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x,  }\item[{uint32\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the cartesian coordiante lies outside of the circle with the radius center\+Detect\+Radius\+\_\+. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X value of the coordinate. \\
+\hline
+{\em y} & Y value of the coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The coordinate is outside of the circle. 
+
+false The coordinate lies indside the circle. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file joy\+\_\+stick.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                                                                   \{}
+\DoxyCodeLine{23   \textcolor{keywordtype}{double} distance = sqrt(sq(x -\/ (\mbox{\hyperlink{classhardware_1_1joy__stick_a7db0bb0129348a615de04fc9e4d7ca03}{centerPoint\_}})) + sq(y -\/ (\mbox{\hyperlink{classhardware_1_1joy__stick_a7db0bb0129348a615de04fc9e4d7ca03}{centerPoint\_}})));}
+\DoxyCodeLine{24   \textcolor{keywordflow}{return} (distance > \mbox{\hyperlink{classhardware_1_1joy__stick_a5b5b09e7b6dd10d4afcf0e0b8c045332}{centerDetectRadius\_}});}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-joy\+\_\+stick.\+hpp\item 
-joy\+\_\+stick.\+cpp\end{DoxyCompactItemize}
+snake\+\_\+embedded\+\_\+systems/joy\+\_\+stick.\+hpp\item 
+snake\+\_\+embedded\+\_\+systems/joy\+\_\+stick.\+cpp\end{DoxyCompactItemize}

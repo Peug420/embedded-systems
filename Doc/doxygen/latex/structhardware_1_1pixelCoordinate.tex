@@ -1,6 +1,6 @@
-\doxysection{hardware\+::pixel\+Coordinate Struct Reference}
-\hypertarget{structhardware_1_1pixelCoordinate}{}\label{structhardware_1_1pixelCoordinate}\index{hardware::pixelCoordinate@{hardware::pixelCoordinate}}
-\doxysubsubsection*{Public Member Functions}
+\hypertarget{structhardware_1_1pixelCoordinate}{}\doxysection{hardware\+::pixel\+Coordinate Struct Reference}
+\label{structhardware_1_1pixelCoordinate}\index{hardware::pixelCoordinate@{hardware::pixelCoordinate}}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}{increaseX}} ()
@@ -11,19 +11,26 @@ bool \mbox{\hyperlink{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170ba
 \begin{DoxyCompactList}\small\item\em Decreases the x\+\_\+ value by 1, but not less than 0. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}{decreaseY}} ()
 \begin{DoxyCompactList}\small\item\em Decreases the y\+\_\+ value by 1, but not less than 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structhardware_1_1pixelCoordinate_af7b10b4a47ba66d752773e7b3afd6a48}\label{structhardware_1_1pixelCoordinate_af7b10b4a47ba66d752773e7b3afd6a48} 
+\mbox{\Hypertarget{structhardware_1_1pixelCoordinate_af7b10b4a47ba66d752773e7b3afd6a48}\label{structhardware_1_1pixelCoordinate_af7b10b4a47ba66d752773e7b3afd6a48}} 
 uint8\+\_\+t {\bfseries x\+\_\+}
 \item 
-\Hypertarget{structhardware_1_1pixelCoordinate_ae8b943b1029d4a0c74092f1398b884cb}\label{structhardware_1_1pixelCoordinate_ae8b943b1029d4a0c74092f1398b884cb} 
+\mbox{\Hypertarget{structhardware_1_1pixelCoordinate_ae8b943b1029d4a0c74092f1398b884cb}\label{structhardware_1_1pixelCoordinate_ae8b943b1029d4a0c74092f1398b884cb}} 
 uint8\+\_\+t {\bfseries y\+\_\+}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 22 of file led\+\_\+matrix.\+hpp.
+
+
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1}\label{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1} 
+\mbox{\Hypertarget{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1}\label{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1}} 
 \index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!decreaseX@{decreaseX}}
 \index{decreaseX@{decreaseX}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
 \doxysubsubsection{\texorpdfstring{decreaseX()}{decreaseX()}}
@@ -38,7 +45,21 @@ true New value is not out of matrix dimension.
 
 false New value is out of matrix dimension. 
 \end{DoxyReturn}
-\Hypertarget{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}\label{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9} 
+
+
+Definition at line 17 of file led\+\_\+matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                         \{}
+\DoxyCodeLine{18   \textcolor{keywordflow}{if} (x\_ == 0)}
+\DoxyCodeLine{19     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{20   -\/-\/x\_;}
+\DoxyCodeLine{21   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}\label{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}} 
 \index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!decreaseY@{decreaseY}}
 \index{decreaseY@{decreaseY}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
 \doxysubsubsection{\texorpdfstring{decreaseY()}{decreaseY()}}
@@ -53,7 +74,21 @@ true New value is not out of matrix dimension.
 
 false New value is out of matrix dimension. 
 \end{DoxyReturn}
-\Hypertarget{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}\label{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703} 
+
+
+Definition at line 24 of file led\+\_\+matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                         \{}
+\DoxyCodeLine{25   \textcolor{keywordflow}{if} (y\_ == 0)}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{27   -\/-\/y\_;}
+\DoxyCodeLine{28   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}\label{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}} 
 \index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!increaseX@{increaseX}}
 \index{increaseX@{increaseX}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
 \doxysubsubsection{\texorpdfstring{increaseX()}{increaseX()}}
@@ -68,7 +103,21 @@ true New value is not out of matrix dimension MATRIX\+\_\+\+HEIGHT.
 
 false New value is out of matrix dimension MATRIX\+\_\+\+HEIGHT. 
 \end{DoxyReturn}
-\Hypertarget{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d}\label{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d} 
+
+
+Definition at line 3 of file led\+\_\+matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                         \{}
+\DoxyCodeLine{4   \textcolor{keywordflow}{if} (x\_ + 1 >= MATRIX\_WIDTH)}
+\DoxyCodeLine{5     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{6   ++x\_;}
+\DoxyCodeLine{7   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d}\label{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d}} 
 \index{hardware::pixelCoordinate@{hardware::pixelCoordinate}!increaseY@{increaseY}}
 \index{increaseY@{increaseY}!hardware::pixelCoordinate@{hardware::pixelCoordinate}}
 \doxysubsubsection{\texorpdfstring{increaseY()}{increaseY()}}
@@ -85,7 +134,21 @@ false New value is out of matrix dimension MATRIX\+\_\+\+WIDTH.
 \end{DoxyReturn}
 
 
+Definition at line 10 of file led\+\_\+matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10                                         \{}
+\DoxyCodeLine{11   \textcolor{keywordflow}{if} (y\_ + 1 >= MATRIX\_HEIGHT)}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{13   ++y\_;}
+\DoxyCodeLine{14   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+
+
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-led\+\_\+matrix.\+hpp\item 
-led\+\_\+matrix.\+cpp\end{DoxyCompactItemize}
+snake\+\_\+embedded\+\_\+systems/led\+\_\+matrix.\+hpp\item 
+snake\+\_\+embedded\+\_\+systems/led\+\_\+matrix.\+cpp\end{DoxyCompactItemize}

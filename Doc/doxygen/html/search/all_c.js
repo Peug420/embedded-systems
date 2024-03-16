@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unsetpixel_0',['unsetPixel',['../classhardware_1_1led__matrix.html#a71e5b74f065d6da8b9a3c1535beac767',1,'hardware::led_matrix']]]
+  ['reset_48',['reset',['../classhardware_1_1led__matrix.html#a235994640579cee02ddf35d862d1d5d1',1,'hardware::led_matrix']]]
 ];

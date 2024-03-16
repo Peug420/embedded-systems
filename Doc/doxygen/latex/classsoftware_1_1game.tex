@@ -1,28 +1,117 @@
-\doxysection{software\+::game Class Reference}
-\hypertarget{classsoftware_1_1game}{}\label{classsoftware_1_1game}\index{software::game@{software::game}}
-\doxysubsubsection*{Public Member Functions}
+\hypertarget{classsoftware_1_1game}{}\doxysection{software\+::game Class Reference}
+\label{classsoftware_1_1game}\index{software::game@{software::game}}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classsoftware_1_1game_ac485c76221681746303160cf4a3a99ab}{game}} (\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware\+::led\+\_\+matrix}} \+\_\+led\+Matrix, \mbox{\hyperlink{classhardware_1_1joy__stick}{hardware\+::joy\+\_\+stick}} \+\_\+joy\+Stick)
+\mbox{\Hypertarget{classsoftware_1_1game_ae7e94273adca27663481f8e1d92e2fe6}\label{classsoftware_1_1game_ae7e94273adca27663481f8e1d92e2fe6}} 
+enum \mbox{\hyperlink{classsoftware_1_1game_ae7e94273adca27663481f8e1d92e2fe6}{game\+State}} \{ {\bfseries running}
+, {\bfseries menu\+State}
+, {\bfseries lose\+Screen}
+ \}
+\begin{DoxyCompactList}\small\item\em Defining 3 game states\+: running and menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsoftware_1_1game_acde20b757032ff54b9b3afe25dd07091}{game}} (\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware\+::led\+\_\+matrix}} \&\+\_\+led\+Matrix, \mbox{\hyperlink{classhardware_1_1joy__stick}{hardware\+::joy\+\_\+stick}} \&\+\_\+joy\+Stick)
 \begin{DoxyCompactList}\small\item\em Construct a new game object. \end{DoxyCompactList}\item 
-\Hypertarget{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6}\label{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}game} ()
+\mbox{\Hypertarget{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6}\label{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6}} 
+\mbox{\hyperlink{classsoftware_1_1game_a55449631cff6aee5c2bfd5136af695d6}{$\sim$game}} ()
 \begin{DoxyCompactList}\small\item\em Destroy the game object. \end{DoxyCompactList}\item 
-\Hypertarget{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f}\label{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f} 
-void {\bfseries init} ()
-\begin{DoxyCompactList}\small\item\em Should be called shortly after the object is constructed. Initializes the led\+Matrix\+\_\+ object and the joy\+Stick\+\_\+ object by calling their init functions. Unsets all pixels in game\+Board\+\_\+. Sets a random inital direction and a random start point for the snake. The random startpoint is in an inner square which is 70\% of the game board size. Spawns 2 randomly placed foods on the board. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f}\label{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f}} 
+void \mbox{\hyperlink{classsoftware_1_1game_ac202e6fb05df21bd08341a98dd346a7f}{init}} ()
+\begin{DoxyCompactList}\small\item\em Should be called shortly after the object is constructed. Initializes the led\+Matrix\+\_\+ object and the joy\+Stick\+\_\+ object by calling their init functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_a60ef233d32ec68d62c45a358e85f9376}\label{classsoftware_1_1game_a60ef233d32ec68d62c45a358e85f9376}} 
+void \mbox{\hyperlink{classsoftware_1_1game_a60ef233d32ec68d62c45a358e85f9376}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the game. Unsets all pixels in game\+Board\+\_\+. Sets a random inital direction and a random start point for the snake. The random startpoint is in an inner square which is 70\% of the game board size. Spawns 2 randomly placed foods on the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsoftware_1_1game_a78aabcc799aee5bc34e4a8cc32ad101c}{set\+Game\+State}} (\mbox{\hyperlink{classsoftware_1_1game_ae7e94273adca27663481f8e1d92e2fe6}{game\+State}} state)
+\begin{DoxyCompactList}\small\item\em Sets the game state. The main inits interrupts for the button and sets the game state accordingly. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f}{exec}} ()
 \begin{DoxyCompactList}\small\item\em Executes one frame of the game, whereby a frame and a move of the snake is the same cycle. Thus the game speed is controlled by the rate of calling exec. Should be called about every 300 ms for playable results. Returns if the game is lost. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}{menu}} ()
-\begin{DoxyCompactList}\small\item\em Not yet implemented. Should not be used. At current state just returns if the joy stick is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints the menu text. Returns earlier if button was pressed and game starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsoftware_1_1game_a9f080e94ae0242eb76905440848d454f}\label{classsoftware_1_1game_a9f080e94ae0242eb76905440848d454f}} 
+enum \mbox{\hyperlink{classsoftware_1_1game_a9f080e94ae0242eb76905440848d454f}{game\+Difficulty}} \{ {\bfseries easy}
+, {\bfseries normal}
+, {\bfseries hard}
+ \}
+\begin{DoxyCompactList}\small\item\em !\+Not yet implemented! Defining 3 game difficulties for possibly later implementation of game difficulties. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}\label{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}} 
+enum \mbox{\hyperlink{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}{pixel\+Type}} \{ \newline
+{\bfseries unset}
+, {\bfseries snake\+Head}
+, {\bfseries snake\+Tail}
+, {\bfseries food}
+, \newline
+{\bfseries obstacle}
+ \}
+\begin{DoxyCompactList}\small\item\em All possible pixel types that can occur on the game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{set\+Pixel}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord, \mbox{\hyperlink{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}{pixel\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Set the pixel type object in the game\+Board\+\_\+ array. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsoftware_1_1game_addee16d180d4f979320d3ad03b69bed8}{is\+Pixel\+Free}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord)
+\begin{DoxyCompactList}\small\item\em Checks if the pixel has pixel type unset. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsoftware_1_1game_a3550eba73dc1f33e9d3ae821f3023a46}{is\+Pixel\+Food}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord)
+\begin{DoxyCompactList}\small\item\em Checks if the pixel has pixel type food. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsoftware_1_1game_a40abf665da88f79a4db7f7383b16ac3f}{is\+Pixel\+Obstacle}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord)
+\begin{DoxyCompactList}\small\item\em Checks if the pixel has pixel type obstacle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsoftware_1_1game_ac0ecfceca4325d0d7f2d7973357ff970}{is\+Pixel\+Snake}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord)
+\begin{DoxyCompactList}\small\item\em Checks if the pixel has pixel type snake. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}{pixel\+Type}} \mbox{\hyperlink{classsoftware_1_1game_aa79862bbd6d955d6bf67a674be017e22}{get\+Pixel\+Type}} (\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}} coord)
+\begin{DoxyCompactList}\small\item\em Get the Pixel Type object at the coordinate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_a01351dca0e334c090587ae75adfc2e8e}\label{classsoftware_1_1game_a01351dca0e334c090587ae75adfc2e8e}} 
+void \mbox{\hyperlink{classsoftware_1_1game_a01351dca0e334c090587ae75adfc2e8e}{lose\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Is called when the game is lost. That\textquotesingle{}s the case when make\+Move returns false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsoftware_1_1game_ab16981e5bd3d744436b9bcb1525c3e55}{spawn\+Food}} (const uint8\+\_\+t \&number)
+\begin{DoxyCompactList}\small\item\em Spawns a given number of food on random coordiantes on the game board. Before overwriting a set pixel, checks if the pixel is unset. Continuisly checks the pixel set state until it finds the given number of unset pixel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsoftware_1_1game_a8ee1f760a412f7fd5800beabf0bfc762}{make\+Move}} ()
+\begin{DoxyCompactList}\small\item\em Moves the snake one pixel in the direction of the joy stick, if the joy stick has no direction, uses the last input direction. Gets the direction and sets all the pixel data. After setting everything, checks if the new pixel coordinate is invalid, for exampel the body of the snake or the game border and returns the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}\label{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}} 
+\mbox{\hyperlink{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}{pixel\+Type}} \mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{game\+Board\+\_\+}} \mbox{[}MATRIX\+\_\+\+WIDTH\mbox{]}\mbox{[}MATRIX\+\_\+\+HEIGHT\mbox{]}
+\begin{DoxyCompactList}\small\item\em Pixel matrix of the game board, holds the information of which pixel is on which position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}\label{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}} 
+\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware\+::led\+\_\+matrix}} \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{led\+Matrix\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Object for storing the led pixel information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_ad766e73ff48f47ea372b4a3844c73210}\label{classsoftware_1_1game_ad766e73ff48f47ea372b4a3844c73210}} 
+\mbox{\hyperlink{classhardware_1_1joy__stick}{hardware\+::joy\+\_\+stick}} \mbox{\hyperlink{classsoftware_1_1game_ad766e73ff48f47ea372b4a3844c73210}{joy\+Stick\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Object for reading input from a connected joystick. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}\label{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}} 
+\mbox{\hyperlink{classsoftware_1_1snake}{software\+::snake}} \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Object for controlling the snake. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_a5bd4ceeeb860c550e5dfce173db2cf34}\label{classsoftware_1_1game_a5bd4ceeeb860c550e5dfce173db2cf34}} 
+\mbox{\hyperlink{classsoftware_1_1game_a9f080e94ae0242eb76905440848d454f}{game\+Difficulty}} \mbox{\hyperlink{classsoftware_1_1game_a5bd4ceeeb860c550e5dfce173db2cf34}{current\+Difficulty\+\_\+}} \{ game\+Difficulty\+::normal \}
+\begin{DoxyCompactList}\small\item\em game difficulty \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}\label{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}} 
+\mbox{\hyperlink{classsoftware_1_1game_ae7e94273adca27663481f8e1d92e2fe6}{game\+State}} \mbox{\hyperlink{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}{current\+State\+\_\+}} \{ game\+State\+::menu\+State \}
+\begin{DoxyCompactList}\small\item\em game state \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_ae32ea2fc46fb08478861921a835beb98}\label{classsoftware_1_1game_ae32ea2fc46fb08478861921a835beb98}} 
+uint8\+\_\+t \mbox{\hyperlink{classsoftware_1_1game_ae32ea2fc46fb08478861921a835beb98}{number\+Of\+Food\+\_\+}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Number of current food on the board. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsoftware_1_1game_aeebd01f53afb1dca9e9a512fc7b3b0c6}\label{classsoftware_1_1game_aeebd01f53afb1dca9e9a512fc7b3b0c6}} 
+bool \mbox{\hyperlink{classsoftware_1_1game_aeebd01f53afb1dca9e9a512fc7b3b0c6}{initialized\+\_\+}} \{ false \}
+\begin{DoxyCompactList}\small\item\em Is game initalized yet or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file game.\+hpp.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classsoftware_1_1game_ac485c76221681746303160cf4a3a99ab}\label{classsoftware_1_1game_ac485c76221681746303160cf4a3a99ab} 
+\mbox{\Hypertarget{classsoftware_1_1game_acde20b757032ff54b9b3afe25dd07091}\label{classsoftware_1_1game_acde20b757032ff54b9b3afe25dd07091}} 
 \index{software::game@{software::game}!game@{game}}
 \index{game@{game}!software::game@{software::game}}
 \doxysubsubsection{\texorpdfstring{game()}{game()}}
-{\footnotesize\ttfamily software\+::game\+::game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware\+::led\+\_\+matrix}}}]{\+\_\+led\+Matrix,  }\item[{\mbox{\hyperlink{classhardware_1_1joy__stick}{hardware\+::joy\+\_\+stick}}}]{\+\_\+joy\+Stick }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily software\+::game\+::game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhardware_1_1led__matrix}{hardware\+::led\+\_\+matrix}} \&}]{\+\_\+led\+Matrix,  }\item[{\mbox{\hyperlink{classhardware_1_1joy__stick}{hardware\+::joy\+\_\+stick}} \&}]{\+\_\+joy\+Stick }\end{DoxyParamCaption})}
 
 
 
@@ -37,8 +126,20 @@ Construct a new game object.
 \end{DoxyParams}
 
 
+Definition at line 5 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7   : \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}(\_ledMatrix),}
+\DoxyCodeLine{8     \mbox{\hyperlink{classsoftware_1_1game_ad766e73ff48f47ea372b4a3844c73210}{joyStick\_}}(\_joyStick),}
+\DoxyCodeLine{9     \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}() \{}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f}\label{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f} 
+\mbox{\Hypertarget{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f}\label{classsoftware_1_1game_aca6a610b7bed62f39079e21d7ba7bd8f}} 
 \index{software::game@{software::game}!exec@{exec}}
 \index{exec@{exec}!software::game@{software::game}}
 \doxysubsubsection{\texorpdfstring{exec()}{exec()}}
@@ -53,7 +154,280 @@ true Game can continue.
 
 false Game is lost. 
 \end{DoxyReturn}
-\Hypertarget{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}\label{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442} 
+
+
+Definition at line 215 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{215                         \{}
+\DoxyCodeLine{216   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}{currentState\_}} != gameState::running)}
+\DoxyCodeLine{217     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219   \mbox{\hyperlink{classhardware_1_1joy__stick_a17a9c03c7f91385bcd36a4af4904471f}{hardware::joy\_stick::direction}} dir = \mbox{\hyperlink{classsoftware_1_1game_ad766e73ff48f47ea372b4a3844c73210}{joyStick\_}}.\mbox{\hyperlink{classhardware_1_1joy__stick_ab13f475e5553fc111db863eb5773e015}{getDirection}}();}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221   \textcolor{keywordflow}{if} (dir != hardware::joy\_stick::direction::noDirection) \{}
+\DoxyCodeLine{222     \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_a6d6413e21ae4e81f1d84ae673dfbfd6b}{setDirection}}(dir);}
+\DoxyCodeLine{223   \}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225   \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classsoftware_1_1game_a8ee1f760a412f7fd5800beabf0bfc762}{makeMove}}()) \{}
+\DoxyCodeLine{226     \mbox{\hyperlink{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}{currentState\_}} = gameState::loseScreen;}
+\DoxyCodeLine{227     \mbox{\hyperlink{classsoftware_1_1game_a01351dca0e334c090587ae75adfc2e8e}{loseGame}}();}
+\DoxyCodeLine{228     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{229   \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_ae32ea2fc46fb08478861921a835beb98}{numberOfFood\_}} < 2) \{}
+\DoxyCodeLine{232     \mbox{\hyperlink{classsoftware_1_1game_ab16981e5bd3d744436b9bcb1525c3e55}{spawnFood}}(2);}
+\DoxyCodeLine{233   \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235   \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}.\mbox{\hyperlink{classhardware_1_1led__matrix_afd74254059fb5b6e6dfaea2984625e32}{outputMatrix}}();}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{238 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_aa79862bbd6d955d6bf67a674be017e22}\label{classsoftware_1_1game_aa79862bbd6d955d6bf67a674be017e22}} 
+\index{software::game@{software::game}!getPixelType@{getPixelType}}
+\index{getPixelType@{getPixelType}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{getPixelType()}{getPixelType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}{software\+::game\+::pixel\+Type}} software\+::game\+::get\+Pixel\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the Pixel Type object at the coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordinate to get pixel type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pixel\+Type 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                                                               \{}
+\DoxyCodeLine{66   \textcolor{keywordflow}{return} \mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{gameBoard\_}}[coord.x\_][coord.y\_];}
+\DoxyCodeLine{67 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_a3550eba73dc1f33e9d3ae821f3023a46}\label{classsoftware_1_1game_a3550eba73dc1f33e9d3ae821f3023a46}} 
+\index{software::game@{software::game}!isPixelFood@{isPixelFood}}
+\index{isPixelFood@{isPixelFood}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{isPixelFood()}{isPixelFood()}}
+{\footnotesize\ttfamily bool software\+::game\+::is\+Pixel\+Food (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the pixel has pixel type food. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordinate to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pixel type is food. 
+
+false Pixel type is not food. 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47                                                             \{}
+\DoxyCodeLine{48   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{gameBoard\_}}[coord.x\_][coord.y\_] == pixelType::food)}
+\DoxyCodeLine{49     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{50   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_addee16d180d4f979320d3ad03b69bed8}\label{classsoftware_1_1game_addee16d180d4f979320d3ad03b69bed8}} 
+\index{software::game@{software::game}!isPixelFree@{isPixelFree}}
+\index{isPixelFree@{isPixelFree}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{isPixelFree()}{isPixelFree()}}
+{\footnotesize\ttfamily bool software\+::game\+::is\+Pixel\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the pixel has pixel type unset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordinate to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pixel type is unset. 
+
+false Pixel type is not unset. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                                                             \{}
+\DoxyCodeLine{42   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{gameBoard\_}}[coord.x\_][coord.y\_] == pixelType::unset)}
+\DoxyCodeLine{43     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{44   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_a40abf665da88f79a4db7f7383b16ac3f}\label{classsoftware_1_1game_a40abf665da88f79a4db7f7383b16ac3f}} 
+\index{software::game@{software::game}!isPixelObstacle@{isPixelObstacle}}
+\index{isPixelObstacle@{isPixelObstacle}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{isPixelObstacle()}{isPixelObstacle()}}
+{\footnotesize\ttfamily bool software\+::game\+::is\+Pixel\+Obstacle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the pixel has pixel type obstacle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordinate to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pixel type is obstacle. 
+
+false Pixel type is not obstacle. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53                                                                 \{}
+\DoxyCodeLine{54   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{gameBoard\_}}[coord.x\_][coord.y\_] == pixelType::obstacle)}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{56   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_ac0ecfceca4325d0d7f2d7973357ff970}\label{classsoftware_1_1game_ac0ecfceca4325d0d7f2d7973357ff970}} 
+\index{software::game@{software::game}!isPixelSnake@{isPixelSnake}}
+\index{isPixelSnake@{isPixelSnake}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{isPixelSnake()}{isPixelSnake()}}
+{\footnotesize\ttfamily bool software\+::game\+::is\+Pixel\+Snake (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the pixel has pixel type snake. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordinate to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pixel type is snake. 
+
+false Pixel type is not snake. 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59                                                              \{}
+\DoxyCodeLine{60   \textcolor{keywordflow}{if} ((\mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{gameBoard\_}}[coord.x\_][coord.y\_] == pixelType::snakeHead) || (\mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{gameBoard\_}}[coord.x\_][coord.y\_] == pixelType::snakeTail))}
+\DoxyCodeLine{61     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{62   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_a8ee1f760a412f7fd5800beabf0bfc762}\label{classsoftware_1_1game_a8ee1f760a412f7fd5800beabf0bfc762}} 
+\index{software::game@{software::game}!makeMove@{makeMove}}
+\index{makeMove@{makeMove}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{makeMove()}{makeMove()}}
+{\footnotesize\ttfamily bool software\+::game\+::make\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Moves the snake one pixel in the direction of the joy stick, if the joy stick has no direction, uses the last input direction. Gets the direction and sets all the pixel data. After setting everything, checks if the new pixel coordinate is invalid, for exampel the body of the snake or the game border and returns the result. 
+
+\begin{DoxyReturn}{Returns}
+true Move was valid, game can continue. 
+
+false Move was not valid, \mbox{\hyperlink{classsoftware_1_1game_a01351dca0e334c090587ae75adfc2e8e}{lose\+Game()}} should be called, after returning from this method. 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100                             \{}
+\DoxyCodeLine{101   \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}} newCoord;}
+\DoxyCodeLine{102   \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_a9b2210892507bac965c567f89d3fd218}{getDirection}}()) \{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{case} hardware::joy\_stick::direction::up:}
+\DoxyCodeLine{104       newCoord = \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}();}
+\DoxyCodeLine{105       \textcolor{keywordflow}{if} (!newCoord.\mbox{\hyperlink{structhardware_1_1pixelCoordinate_a5d07cde6f68bfd3c35179b487e79579d}{increaseY}}())  \textcolor{comment}{// move is out of game board}}
+\DoxyCodeLine{106         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{107       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{108     \textcolor{keywordflow}{case} hardware::joy\_stick::direction::down:}
+\DoxyCodeLine{109       newCoord = \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}();}
+\DoxyCodeLine{110       \textcolor{keywordflow}{if} (!newCoord.\mbox{\hyperlink{structhardware_1_1pixelCoordinate_a8924997cf6484769eee522c41aaf48e9}{decreaseY}}())}
+\DoxyCodeLine{111         \textcolor{keywordflow}{return} \textcolor{keyword}{false};  \textcolor{comment}{// move is out of game board}}
+\DoxyCodeLine{112       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{113     \textcolor{keywordflow}{case} hardware::joy\_stick::direction::left:}
+\DoxyCodeLine{114       newCoord = \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}();}
+\DoxyCodeLine{115       \textcolor{keywordflow}{if} (!newCoord.\mbox{\hyperlink{structhardware_1_1pixelCoordinate_aee36b2d9726f98a24c170bae8eac17f1}{decreaseX}}())  \textcolor{comment}{// move is out of game board}}
+\DoxyCodeLine{116         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{117       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{118     \textcolor{keywordflow}{case} hardware::joy\_stick::direction::right:}
+\DoxyCodeLine{119       newCoord = \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}();}
+\DoxyCodeLine{120       \textcolor{keywordflow}{if} (!newCoord.\mbox{\hyperlink{structhardware_1_1pixelCoordinate_a7c520ef86064fd824774ba2a0a256703}{increaseX}}())  \textcolor{comment}{// move is out of game board}}
+\DoxyCodeLine{121         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{122       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{123     \textcolor{keywordflow}{case} hardware::joy\_stick::direction::noDirection:}
+\DoxyCodeLine{124       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{125       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{126     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{127       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{128       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{129   \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131   \textcolor{keywordflow}{switch} (\mbox{\hyperlink{classsoftware_1_1game_aa79862bbd6d955d6bf67a674be017e22}{getPixelType}}(newCoord)) \{}
+\DoxyCodeLine{132     \textcolor{keywordflow}{case} pixelType::unset:}
+\DoxyCodeLine{133       \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{setPixel}}(\mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_a452b67ad805a0a0f39f5593fdd6b2a12}{getTailCoord}}(), pixelType::unset);}
+\DoxyCodeLine{134       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_a366ac68925ebc637e8a9bca536fbe53f}{getSnakeLength}}() > 1) \{}
+\DoxyCodeLine{135         \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{setPixel}}(\mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}(), pixelType::snakeTail);}
+\DoxyCodeLine{136         \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac7709e0205f52adc33be53b4fdcd4594}{move}}(newCoord);}
+\DoxyCodeLine{137         \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{setPixel}}(newCoord, pixelType::snakeHead);}
+\DoxyCodeLine{138       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{139         \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac7709e0205f52adc33be53b4fdcd4594}{move}}(newCoord);}
+\DoxyCodeLine{140         \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{setPixel}}(\mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}(), pixelType::snakeHead);}
+\DoxyCodeLine{141       \}}
+\DoxyCodeLine{142       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{143     \textcolor{keywordflow}{case} pixelType::snakeTail:}
+\DoxyCodeLine{144       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{145     \textcolor{keywordflow}{case} pixelType::food:}
+\DoxyCodeLine{146       \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{setPixel}}(\mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_ac9271aabc4adac4c50d062ecb65725bd}{getHeadCoord}}(), pixelType::snakeTail);}
+\DoxyCodeLine{147       \mbox{\hyperlink{classsoftware_1_1game_a8dc04581ca5e553c1b7639ce81ec5236}{snake\_}}.\mbox{\hyperlink{classsoftware_1_1snake_a7ef24dcf7f58202c420a010ac14d3a34}{grow}}(newCoord);}
+\DoxyCodeLine{148       \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{setPixel}}(newCoord, pixelType::snakeHead);}
+\DoxyCodeLine{149       -\/-\/\mbox{\hyperlink{classsoftware_1_1game_ae32ea2fc46fb08478861921a835beb98}{numberOfFood\_}};}
+\DoxyCodeLine{150       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{151     \textcolor{keywordflow}{case} pixelType::obstacle:}
+\DoxyCodeLine{152       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{153     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{154       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{155   \}}
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}\label{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}} 
 \index{software::game@{software::game}!menu@{menu}}
 \index{menu@{menu}!software::game@{software::game}}
 \doxysubsubsection{\texorpdfstring{menu()}{menu()}}
@@ -61,16 +435,154 @@ false Game is lost.
 
 
 
-Not yet implemented. Should not be used. At current state just returns if the joy stick is pressed. 
+Prints the menu text. Returns earlier if button was pressed and game starts. 
 
 \begin{DoxyReturn}{Returns}
-true Joy stick is pressed. 
+true game starts 
 
-false Joy stick is not pressed. 
+false game has not been started yet 
 \end{DoxyReturn}
+
+
+Definition at line 240 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{240                         \{}
+\DoxyCodeLine{241   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}{currentState\_}} != gameState::menuState)}
+\DoxyCodeLine{242     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{243   \textcolor{keyword}{const} \textcolor{keyword}{static} int16\_t charWidth = 6;}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245   std::string \mbox{\hyperlink{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}{menu}}\{ \textcolor{stringliteral}{"{}Press to start."{}} \};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247   \textcolor{keywordflow}{for} (int16\_t x = (MATRIX\_WIDTH -\/ 1);}
+\DoxyCodeLine{248        x >= (\textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(\mbox{\hyperlink{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}{menu}}.size()) * charWidth * -\/1); x-\/-\/) \{}
+\DoxyCodeLine{249     \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}.\mbox{\hyperlink{classhardware_1_1led__matrix_a55dc23e80713268b7c88accdfd0614b2}{printText}}(\mbox{\hyperlink{classsoftware_1_1game_a5ca7afe5416dcccf53d98bb85f018442}{menu}}.c\_str(), x, 10, CRGB::Blue, \textcolor{keyword}{false});}
+\DoxyCodeLine{250     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}{currentState\_}} == game::running)}
+\DoxyCodeLine{251       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{252     delay(100);}
+\DoxyCodeLine{253   \}}
+\DoxyCodeLine{254   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{255 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_a78aabcc799aee5bc34e4a8cc32ad101c}\label{classsoftware_1_1game_a78aabcc799aee5bc34e4a8cc32ad101c}} 
+\index{software::game@{software::game}!setGameState@{setGameState}}
+\index{setGameState@{setGameState}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{setGameState()}{setGameState()}}
+{\footnotesize\ttfamily void software\+::game\+::set\+Game\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsoftware_1_1game_ae7e94273adca27663481f8e1d92e2fe6}{game\+State}}}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the game state. The main inits interrupts for the button and sets the game state accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & new game state \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{211                                                \{}
+\DoxyCodeLine{212   \mbox{\hyperlink{classsoftware_1_1game_af34d93c90ee82aa00d58ce276ca5887c}{currentState\_}} = state;}
+\DoxyCodeLine{213 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}\label{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}} 
+\index{software::game@{software::game}!setPixel@{setPixel}}
+\index{setPixel@{setPixel}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{setPixel()}{setPixel()}}
+{\footnotesize\ttfamily void software\+::game\+::set\+Pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware\+::pixel\+Coordinate}}}]{coord,  }\item[{\mbox{\hyperlink{classsoftware_1_1game_a6dd76e3492fc227ffdbd39fb9f3a4993}{pixel\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set the pixel type object in the game\+Board\+\_\+ array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & \\
+\hline
+{\em type} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                                                          \{}
+\DoxyCodeLine{18   \textcolor{keywordflow}{if} (coord.x\_ >= MATRIX\_WIDTH || coord.y\_ >= MATRIX\_HEIGHT)}
+\DoxyCodeLine{19     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{20   \mbox{\hyperlink{classsoftware_1_1game_ab69f040e3721986d77897b2dee911775}{gameBoard\_}}[coord.x\_][coord.y\_] = type;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   \textcolor{keywordflow}{switch} (type) \{}
+\DoxyCodeLine{23     \textcolor{keywordflow}{case} pixelType::snakeHead:}
+\DoxyCodeLine{24       \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}.\mbox{\hyperlink{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}{setPixel}}(coord.x\_, coord.y\_, hardware::led\_matrix::colorPixel::head);}
+\DoxyCodeLine{25       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{26     \textcolor{keywordflow}{case} pixelType::snakeTail:}
+\DoxyCodeLine{27       \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}.\mbox{\hyperlink{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}{setPixel}}(coord.x\_, coord.y\_, hardware::led\_matrix::colorPixel::tail);}
+\DoxyCodeLine{28       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{29     \textcolor{keywordflow}{case} pixelType::food:}
+\DoxyCodeLine{30       \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}.\mbox{\hyperlink{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}{setPixel}}(coord.x\_, coord.y\_, hardware::led\_matrix::colorPixel::food);}
+\DoxyCodeLine{31       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{32     \textcolor{keywordflow}{case} pixelType::obstacle:}
+\DoxyCodeLine{33       \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}.\mbox{\hyperlink{classhardware_1_1led__matrix_abb2f8b13cc0fd902261fc9a1241462bc}{setPixel}}(coord.x\_, coord.y\_, hardware::led\_matrix::colorPixel::obstacle);}
+\DoxyCodeLine{34       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{35     \textcolor{keywordflow}{case} pixelType::unset:}
+\DoxyCodeLine{36       \mbox{\hyperlink{classsoftware_1_1game_a2c83fb1f0617f88d0915d83b5cab65f5}{ledMatrix\_}}.\mbox{\hyperlink{classhardware_1_1led__matrix_a71e5b74f065d6da8b9a3c1535beac767}{unsetPixel}}(coord.x\_, coord.y\_);}
+\DoxyCodeLine{37       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{38   \}}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classsoftware_1_1game_ab16981e5bd3d744436b9bcb1525c3e55}\label{classsoftware_1_1game_ab16981e5bd3d744436b9bcb1525c3e55}} 
+\index{software::game@{software::game}!spawnFood@{spawnFood}}
+\index{spawnFood@{spawnFood}!software::game@{software::game}}
+\doxysubsubsection{\texorpdfstring{spawnFood()}{spawnFood()}}
+{\footnotesize\ttfamily void software\+::game\+::spawn\+Food (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \&}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spawns a given number of food on random coordiantes on the game board. Before overwriting a set pixel, checks if the pixel is unset. Continuisly checks the pixel set state until it finds the given number of unset pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of pixels to spawn. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file game.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                                                   \{}
+\DoxyCodeLine{83   \textcolor{keywordflow}{if} (number > 10)}
+\DoxyCodeLine{84     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{85   \textcolor{keywordflow}{for} (uint8\_t i = 0; i < number; ++i) \{}
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} spawnSucc = \textcolor{keyword}{false};}
+\DoxyCodeLine{87     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{88       uint8\_t x = random(MATRIX\_WIDTH);}
+\DoxyCodeLine{89       uint8\_t y = random(MATRIX\_HEIGHT);}
+\DoxyCodeLine{90       \mbox{\hyperlink{structhardware_1_1pixelCoordinate}{hardware::pixelCoordinate}} newCoord\{ x, y \};}
+\DoxyCodeLine{91       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classsoftware_1_1game_addee16d180d4f979320d3ad03b69bed8}{isPixelFree}}(newCoord)) \{}
+\DoxyCodeLine{92         \mbox{\hyperlink{classsoftware_1_1game_a21e82ec7f380e569ae69c84bf2e7521b}{setPixel}}(newCoord, pixelType::food);}
+\DoxyCodeLine{93         spawnSucc = \textcolor{keyword}{true};}
+\DoxyCodeLine{94       \}}
+\DoxyCodeLine{95     \} \textcolor{keywordflow}{while} (!spawnSucc);}
+\DoxyCodeLine{96     ++\mbox{\hyperlink{classsoftware_1_1game_ae32ea2fc46fb08478861921a835beb98}{numberOfFood\_}};}
+\DoxyCodeLine{97   \}}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-game.\+hpp\item 
-game.\+cpp\end{DoxyCompactItemize}
+snake\+\_\+embedded\+\_\+systems/game.\+hpp\item 
+snake\+\_\+embedded\+\_\+systems/game.\+cpp\end{DoxyCompactItemize}

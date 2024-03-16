@@ -47,8 +47,8 @@ public:
      */
   ~snake();
   /**
-     * @brief Init function for this object. Need to be called shortly after
-     *        initialisation. The start coordinate and start direction is set by
+     * @brief Init function for this object. Needs to be called shortly after
+     *        instantiation. The start coordinate and start direction is set by
      *        this method.
      * 
      * @param coord Starting coordinate.

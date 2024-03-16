@@ -61,8 +61,3 @@ void software::snake::setDirection(hardware::joy_stick::direction dir) {
 uint8_t software::snake::getSnakeLength() {
   return snake_.size();
 }
-
-
-
-
-
